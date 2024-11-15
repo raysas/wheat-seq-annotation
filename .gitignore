@@ -1,6 +1,6 @@
 readme.*
 !reamde.md
 test/
-!utils/test/
+# !utils/test/
 references.bib
 tools/

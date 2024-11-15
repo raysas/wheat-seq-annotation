@@ -59,9 +59,9 @@ tar zxf tools/artemis-unix-release-18.2.0.tar.gz
 ```
 Running it:
 ```bash 
-artemis/art
+artemis/art #or art if installed through conda
 ```
 or try opening a fasta example from terminal:  
 ```bash
-artemis/art ../test/thaliana_example.fasta
+artemis/art ../utils/example/thaliana_example.fasta
 ```
