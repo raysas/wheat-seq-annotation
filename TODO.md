@@ -1,26 +1,29 @@
 
-**annotate the given sequence:**  
+# TO-DO list
 
+## Workflow:  
+
+- [ ]  1. FGENESH: will get coordinated (ATF, stop, intron/exon, mRNA/protein seq)  
+- [ ] 2.a validation of data, comparison with mRNA RNAseq and ESTs (database SRA and dbEST)  - validate the inrton/exon boundaries and define UTRs (Untranslated regions)  
+- [ ] 2.b Validation of data, comparison with homologuous proteins, comparison with genome 
+    - A and B for _Triticum monococcum_ and _Triticum durum_  
+    - D for _Aegilops tauschii_  
+    - A, B and D for _Triticum aestivum_   
+- [ ] Combine everything on artemis
+
+## Tools:  
+
+- [ ] FGENESH    
+- [ ] GrainGenes  
+- [ ] DNASubway  
+
+
+
+
+## Instructions:
 - [ ] **genes: complete coordinates of intron-exon structure and UTR, validation by the presence of transcribedsequences and/or homologous genes.**  
     - [ ] _complete coordinates of intron-exon structure and UTR_: ab initio methods (detecting signals and gene content in the seqeunce)   
-    In slides:  
-        - GenScan+  
-        - GenMarkHMM  
-        - FgenesH-At  
-        - FgenesH-Mt  
-        - EGN  
-        - EGN+FgenesH  
-        - EGN+FH+AA  
-        - EGN+FH+AA+  
-        - EST  
-    others:  
-        - SNAP   
-        - Augustus  
-        - GeneMark-ES  
-        - FGENESH  
-        - GlimmerHMM  
-        - GenScan   
-        - Gnomon (NCBI)  
+
 
 
 
@@ -38,3 +41,23 @@ Some tools:
     - RepeatMasker  
     - CENSOR
 
+
+
+    <!-- In slides:  
+        - GenScan+  
+        - GenMarkHMM  
+        - FgenesH-At  
+        - FgenesH-Mt  
+        - EGN  
+        - EGN+FgenesH  
+        - EGN+FH+AA  
+        - EGN+FH+AA+  
+        - EST  
+    others:  
+        - SNAP   
+        - Augustus  
+        - GeneMark-ES  
+        - FGENESH  
+        - GlimmerHMM  
+        - GenScan   
+        - Gnomon (NCBI)   -->
