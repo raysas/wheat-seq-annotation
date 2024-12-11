@@ -43,21 +43,22 @@ Some tools:
 
 
 
-    <!-- In slides:  
-        - GenScan+  
-        - GenMarkHMM  
-        - FgenesH-At  
-        - FgenesH-Mt  
-        - EGN  
-        - EGN+FgenesH  
-        - EGN+FH+AA  
-        - EGN+FH+AA+  
-        - EST  
-    others:  
-        - SNAP   
-        - Augustus  
-        - GeneMark-ES  
-        - FGENESH  
-        - GlimmerHMM  
-        - GenScan   
-        - Gnomon (NCBI)   -->
+## In slides: 
+Tools: 
+    - GenScan+  
+    - GenMarkHMM  
+    - FgenesH-At  
+    - FgenesH-Mt  
+    - EGN  
+    - EGN+FgenesH  
+    - EGN+FH+AA  
+    - EGN+FH+AA+  
+    - EST  
+others:  
+    - SNAP   
+    - Augustus  
+    - GeneMark-ES  
+    - FGENESH  
+    - GlimmerHMM  
+    - GenScan   
+    - Gnomon (NCBI)  
