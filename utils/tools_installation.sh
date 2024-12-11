@@ -16,3 +16,12 @@ if [ ! -d tools/ ]; then mkdir tools; fi #creates a directory if it doesn't exis
 mv artemis-unix-release-18.2.0.tar.gz tools/
 tar zxf tools/artemis-unix-release-18.2.0.tar.gz
 
+# running it:
+# ``` 
+artemis/art 
+#or art if installed through conda
+# ```
+# or try opening a fasta example from terminal:  
+# ```
+artemis/art utils/example/thaliana_example.fasta
+# ```
