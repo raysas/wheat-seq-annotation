@@ -3,8 +3,38 @@ title: "Structural Genomics Project"
 subtitle: "M1 GENIOMHE 2024-25"
 ---
 
+## Transcriptome:  
+
+The [European Nucleotide Archive (ENA)](https://www.ebi.ac.uk/ena/browser/home) comprises a large collection of sequencing data from raw sequences to assembly to functionally annotated ones. While looking for [transcriptome studies for _Triticum aestivum_](https://www.ebi.ac.uk/ena/browser/view/Taxon:4565) we find several projects (Total= 22): 
+
+| Accession     | Description                                                      | Accession     | Description                                                      |
+|---------------|------------------------------------------------------------------|---------------|------------------------------------------------------------------|
+| GAEF01000000  | Triticum aestivum, TSA project GAEF01000000 data                 | GBKH01000000  | Triticum aestivum, TSA project GBKH01000000 data                 |
+| GAJL01000000  | Triticum aestivum, TSA project GAJL01000000 data                 | GBKI01000000  | Triticum aestivum, TSA project GBKI01000000 data                 |
+| GBKJ01000000  | Triticum aestivum, TSA project GBKJ01000000 data                 | GBKK01000000  | Triticum aestivum, TSA project GBKK01000000 data                 |
+| GBZP01000000  | TSA: Triticum aestivum, transcriptome shotgun assembly.          | GDTJ01000000  | Triticum aestivum, TSA project GDTJ01000000 data                 |
+| GEUX01000000  | Triticum aestivum, TSA project GEUX01000000 data                 | GEWU01000000  | Triticum aestivum, TSA project GEWU01000000 data                 |
+| GFFI01000000  | TSA: Triticum aestivum, transcriptome shotgun assembly.          | GIJS01000000  | Triticum aestivum, TSA project GIJS01000000 data                 |
+| GILY01000000  | Triticum aestivum, TSA project GILY01000000 data                 | GIXT01000000  | TSA: Triticum aestivum cultivar TcLr19 isolate leaf, transcriptome shotgun assembly. |
+| GJAR01000000  | TSA: Triticum aestivum cultivar Avocet R, transcriptome shotgun assembly. | GJUY01000000  | TSA: Triticum aestivum, transcriptome shotgun assembly.          |
+| HAAB01000000  | Triticum aestivum, TSA project HAAB01000000 data                 | HCEC01000000  | TSA: Triticum aestivum                                           |
+| HCED01000000  | TSA: Triticum aestivum                                           | IAAK01000000  | TSA: Triticum aestivum, transcriptome shotgun assembly.          |
+| IAAL01000000  | TSA: Triticum aestivum, transcriptome shotgun assembly.          | IAAM01000000  | TSA: Triticum aestivum, transcriptome shotgun assembly.          |
+
+One of them is published in by [Xiao et al. (2013) in BMC Genomics](https://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-14-197) [1]. They have performed short read RNA-seq using Illumina Hi-Seq tech, and deposited the project's raw reads on the SRA database, project [`SRX212270`](https://www.ncbi.nlm.nih.gov/sra/?term=SRX212270). We will use this as trial to explore how we can validate using Whole Transcriptomes before optimizing our choice. 
+
+### Trial 1: blasting against transcriptome 
+
+As a first attempt, due to the high memory requirement (_e.g.,_ 15GB of reads [1]), we have tried performing BLAST on ncbi's server against this whole transcriptome in [1], with default parameters (can perform it [here](https://blast.ncbi.nlm.nih.gov/blast/Blast.cgi?PROGRAM=blastn&BLAST_PROGRAMS=megaBlast&PAGE_TYPE=BlastSearch&BLAST_SPEC=SRA&DB_GROUP=Exp&NUM_ORG=1&EQ_MENU=SRX212270) by just adding the [region8 fasta file](./data/region8.fasta)). The default search gave no significant results, we will try to relax the paramters (BLOSUM45 and lowering penalties, accepting lower thresholds...)
+
 ## Resources:
 
 - Whole Genome (all 6n chr) of _triticum aestivum_ on ENSEMBL : [https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-60/gff3/triticum_aestivum/](https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-60/gff3/triticum_aestivum/  )  
 - ENSEMBL  in general : [https://plants.ensembl.org/Triticum_aestivum/Info/Index](https://plants.ensembl.org/Triticum_aestivum/Info/Index)  
-- ENA: [https://www.ebi.ac.uk/ena/browser/view/Taxon:4565](https://www.ebi.ac.uk/ena/browser/view/Taxon:4565)
+- ENA: [https://www.ebi.ac.uk/ena/browser/view/Taxon:4565](https://www.ebi.ac.uk/ena/browser/view/Taxon:4565)  
+
+
+## References
+
+[1] Xiao, J., Jin, X., Jia, X., Wang, H., Cao, A., Zhao, W., ... & Wang, X. (2013). Transcriptome-based discovery of pathways and genes related to resistance against Fusarium head blight in wheat landrace Wangshuibai. BMC genomics, 14, 1-19.
+
