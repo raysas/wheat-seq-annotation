@@ -1,7 +1,18 @@
 ---
 title: "Structural Genomics Project"  
-subtitle: "M1 GENIOMHE 2024-25"
+subtitle: "M1 GENIOMHE 2024-25"  
+bibliography: references.bib  
 ---
+
+## Exploration of the _Triticum aestivum_ sequence
+
+Checking GC content in this region to have an idea about potential gene desnitites. For that we run the script:  
+
+```bash
+python src/GC_content.py data/region8.fasta
+```
+The GC content of the DNA sequence is 48%.
+
 
 ## Transcriptome:  
 
@@ -23,17 +34,28 @@ The [European Nucleotide Archive (ENA)](https://www.ebi.ac.uk/ena/browser/home) 
 
 _TSA stands for Transcriptome Shotgun Assembly_
 
-One of them is published in by [Xiao et al. (2013) in BMC Genomics](https://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-14-197) [REF1]. They have performed short read RNA-seq using Illumina Hi-Seq tech, and deposited the project's raw reads on the SRA database, project [`SRX212270`](https://www.ncbi.nlm.nih.gov/sra/?term=SRX212270). We will use this as trial to explore how we can validate using Whole Transcriptomes before optimizing our choice. 
+One of them is published by [Xiao et al. (2013) in BMC Genomics](https://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-14-197) [REF1]. They have performed short read RNA-seq using Illumina Hi-Seq tech, and deposited the project's raw reads on the SRA database, project [`SRX212270`](https://www.ncbi.nlm.nih.gov/sra/?term=SRX212270). We will use this as trial to explore how we can validate using Whole Transcriptomes before optimizing our choice. 
 
 ### Trial 1: blasting against transcriptome 
 
-As a first attempt, due to the high memory requirement (_e.g.,_ one of them is 15GB of reads), we have tried performing BLAST on ncbi's server against this whole transcriptome in [REF1], with default parameters (can perform it [here](https://blast.ncbi.nlm.nih.gov/blast/Blast.cgi?PROGRAM=blastn&BLAST_PROGRAMS=megaBlast&PAGE_TYPE=BlastSearch&BLAST_SPEC=SRA&DB_GROUP=Exp&NUM_ORG=1&EQ_MENU=SRX212270) by just adding the [region8 fasta file](./data/region8.fasta)). The default search gave no significant results, we will try to relax the paramters (BLOSUM45 and lowering penalties, accepting lower thresholds...)
+As a first attempt, due to the high memory requirement (_e.g.,_ one of them is 15GB of reads), we have tried performing BLAST on ncbi's server against this whole transcriptome in [REF1] @xiao2013transcriptome, with default parameters (can perform it [here](https://blast.ncbi.nlm.nih.gov/blast/Blast.cgi?PROGRAM=blastn&BLAST_PROGRAMS=megaBlast&PAGE_TYPE=BlastSearch&BLAST_SPEC=SRA&DB_GROUP=Exp&NUM_ORG=1&EQ_MENU=SRX212270) by just adding the [region8 fasta file](./data/region8.fasta)). The default search gave no significant results, we will try to relax the paramters (BLOSUM45 and lowering penalties, accepting lower thresholds...)
 
-To work on galaxy, first retrieve the SRA accession number from the project, tools > Get data > EBI SRA, copy the accession number and get the fastq in galaxy. 
+
 
 ### Trial 2: downloading the WTS data
 
-We will try downloading the reads of [1] to see how to manipulate such a large file. Since it surpasses the threshold to download a file from SRA webserver (which is 5GB), we will download it using [`sra-toolkit`]()
+We will try downloading the reads of [1] to see how to manipulate such a large file. Since it surpasses the threshold to download a file from SRA webserver (which is 5GB), we will download it using [`sra-toolkit`]().  
+While running out of time and memory, we will try doing that using Galaxy.
+
+## Trial 3: Analysis
+
+Working on galaxy, first retrieve the SRA accession number from the project, tools > Get data > EBI SRA, copy the accession number and get the fastq in galaxy. After loading them (paired end so 2 fastq) > fastq groomer, to make sure the fastq format fits Galaxy's requirement and make it run. Meanwhile > FastQC to make sure the quality of the transcriptome is good or whether it's better to take another set of reads. 
+
+## Trial 3: visualization
+
+_trying to perform RNA-seq aln and viz using IGV_  
+
+Then performing alignment (can use Tophat, built in genome and distance 200?). We are intrested in a .bam file output, then download them to visualize them.
 
 ## Resources:
 
