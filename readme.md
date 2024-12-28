@@ -1,4 +1,5 @@
-![header image](./assets/wheat-genome-saclay-extended.png)
+![header image](./assets/wheat-genome-3green.png)
+
 
 
 # Project - M1 GENIOMHE 2024/25: 
