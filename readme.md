@@ -1,4 +1,4 @@
-![header image](./assets/wheat%20genome%20w%20writing.png)
+![header image](./assets/wheat-genome-w.png)
 
 
 # Structural Genomics Project - M1 GENIOMHE 2024/25: 
