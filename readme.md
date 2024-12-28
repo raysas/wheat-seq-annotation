@@ -1,8 +1,7 @@
-# Structural Genomics Project - M1 GENIOMHE 2024/25: 
-
-![header image](./assets/wheat-genome-w.png)
+![header image](./assets/wheat-genome-purple.png)
 
 
+# Project - M1 GENIOMHE 2024/25: 
 
 ## Exploration of the _Triticum aestivum_ sequence
 
