@@ -1,8 +1,7 @@
----
-title: "Structural Genomics Project"  
-subtitle: "M1 GENIOMHE 2024-25"  
-bibliography: references.bib  
----
+![header image](./assets/wheat%20genome%20w%20writing.png)
+
+
+# Structural Genomics Project - M1 GENIOMHE 2024/25: 
 
 ## Exploration of the _Triticum aestivum_ sequence
 
@@ -49,13 +48,13 @@ While running out of time and memory, we will try doing that using Galaxy.
 
 ## Trial 3: Analysis
 
-Working on galaxy, first retrieve the SRA accession number from the project, tools > Get data > EBI SRA, copy the accession number and get the fastq in galaxy. After loading them (paired end so 2 fastq) > fastq groomer, to make sure the fastq format fits Galaxy's requirement and make it run. Meanwhile > FastQC to make sure the quality of the transcriptome is good or whether it's better to take another set of reads. 
+Working on galaxy, first retrieve the SRA accession number from the project, tools > Get data > EBI SRA, copy the accession number and get the fastq in galaxy. After loading them (paired end so 2 fastq) > fastq groomer, to make sure the fastq format fits Galaxy's requirement and make it run. Meanwhile > FastQC to maek sure the quality of the transcriptome is good or whether it's better to take another set of reads.
 
 ## Trial 3: visualization
 
 _trying to perform RNA-seq aln and viz using IGV_  
 
-Then performing alignment (can use Tophat, built in genome and distance 200?). We are intrested in a .bam file output, then download them to visualize them.
+
 
 ## Resources:
 
