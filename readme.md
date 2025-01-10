@@ -32,7 +32,7 @@ $ curl https://rest.uniprot.org/uniprotkb/stream?compressed=true&format=fasta&qu
 $ sgunzip data/web_retrieved_sequences/proteins.fasta.gz
 ```
 ```bash
-$ cat data////////proteins.fasta | grep '>' | wc -l 
+$ cat data/proteins.fasta | grep '>' | wc -l 
 130283
 ```
 There is a total of 130283 proteins in the file. We will now perform a BLAST search against this database to see if our predicted genes are similar to any of the known annotated proteins of _Triticum aestivum_. It'll be a tblastn search, as we are looking for protein sequences that are similar to our DNA sequence (which increases the sensitivity of the search, as it takes into account the codon degenracy). 
