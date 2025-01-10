@@ -1,0 +1,90 @@
+# This output was generated with AUGUSTUS (version 3.3.3).
+# AUGUSTUS is a gene prediction tool written by M. Stanke (mario.stanke@uni-greifswald.de),
+# O. Keller, S. König, L. Gerischer, L. Romoth and Katharina Hoff.
+# Please cite: Mario Stanke, Mark Diekhans, Robert Baertsch, David Haussler (2008),
+# Using native and syntenically mapped cDNA alignments to improve de novo gene finding
+# Bioinformatics 24: 637-644, doi 10.1093/bioinformatics/btn013
+# No extrinsic information on sequences given.
+# Initializing the parameters using config directory /data/www/augustus/augustus/config/ ...
+# wheat version. Using default transition matrix.
+# Looks like /data/www/augustus/webservice/data/AUG-1279836090/input.fa is in fasta format.
+# We have hints for 0 sequences and for 0 of the sequences in the input set.
+#
+# ----- prediction on sequence number 1 (length = 14001, name = unnamed-1) -----
+#
+# Predicted genes for sequence number 1 on both strands
+# start gene g1
+unnamed-1	AUGUSTUS	gene	6226	10861	0.03	+	.	g1
+unnamed-1	AUGUSTUS	transcript	6226	10861	0.03	+	.	g1.t1
+unnamed-1	AUGUSTUS	tss	6226	6226	.	+	.	transcript_id "g1.t1"; gene_id "g1";
+unnamed-1	AUGUSTUS	exon	6226	6762	.	+	.	transcript_id "g1.t1"; gene_id "g1";
+unnamed-1	AUGUSTUS	start_codon	6532	6534	.	+	0	transcript_id "g1.t1"; gene_id "g1";
+unnamed-1	AUGUSTUS	initial	6532	6762	0.94	+	0	transcript_id "g1.t1"; gene_id "g1";
+unnamed-1	AUGUSTUS	terminal	8714	10606	0.93	+	0	transcript_id "g1.t1"; gene_id "g1";
+unnamed-1	AUGUSTUS	intron	6763	8713	0.89	+	.	transcript_id "g1.t1"; gene_id "g1";
+unnamed-1	AUGUSTUS	CDS	6532	6762	0.94	+	0	transcript_id "g1.t1"; gene_id "g1";
+unnamed-1	AUGUSTUS	CDS	8714	10606	0.93	+	0	transcript_id "g1.t1"; gene_id "g1";
+unnamed-1	AUGUSTUS	exon	8714	10861	.	+	.	transcript_id "g1.t1"; gene_id "g1";
+unnamed-1	AUGUSTUS	stop_codon	10604	10606	.	+	0	transcript_id "g1.t1"; gene_id "g1";
+unnamed-1	AUGUSTUS	tts	10861	10861	.	+	.	transcript_id "g1.t1"; gene_id "g1";
+# coding sequence = [atggcggacgcctggggccgggccaagcgcgcgctcgccaccaagctctgcatccgcctgccggaccgccagagggccc
+# tcgaggacgccccgccgccgccgccgccgggacgcgaggcgcaccatccaacgacggcggtggaggccggcccggcgacgggggaggagaaggcgagg
+# tcgccgtccgtgtcctcgcggcggctctccagctccggcagccggggctccaagagggtatgtgccatctgccttggcagtatgaggacagggcacgg
+# acaggccctgtttactgctgaatgctcccataagttccatttccattgcatcacctcaaatgttaggcatggcaaccatatctgcccaatatgccgtg
+# ccgactggaaagaactgcccttccagggacctcaacttgcagatgccactcatgggagagctagagtaagcccggtaaattggccccaagacgacgga
+# cacatggctgttatccgcaggctttccaactcatacagtggaaatctgctggagcaatttcctgtcttccgtactcccgaggcagacattttcaatga
+# cgacgagcaaatagatattcagtctgaaactgtggaggacagcaatgcagttactggttcggttgaaatcaagacatatgcagaagtgcaagccatac
+# agcaatcagtgacccagaaggtcttctctatcttgatccatctcaaggctccgaagtccttggagtccgtgagctcccgtgcacctcttgaccttgtg
+# accgtgcttgatgtcagtggcagcatgaaaggggcaaaacttgcacttctcaagaaggcaatgggctttgtcatccagacgcttgggcccaatgaccg
+# gctgtctgtcattgccttctcatctacggcacggaggctctttccccttcgccaaatgaacgtcaacggacgaatgcaagccatgcatgctgtgaatt
+# cccttgttgatggcggtggcacaaacatttctgatgggctaaagaagggtgctaaagtcattgagcaccgtcggctgaagaatcctgtttgcagcatc
+# attcttctgtcggatggtcaagacacatattcggtgccaacctttgacgacggggttcagacaaaccacagcatgcttgttcctccctcaatcctgcc
+# tggaacaggtaatcatgtgcaaatccacacctttggtttcggcgcagatcatgactcggcggcgatgcatgctattgcggagacatctagcggcacat
+# tctcatttattgatgctgaaggctcaatccagaacggatttgctcagtgtattggtggcctcctcagtgttgtggtcaaggagatgcggctgggcgtc
+# gagtgtgtggacgaaggcgtggtactcacctccatcaagtcaggcggctatgcaagtgaagtagccgtggatggacgtaacgggtcagtcgatatcgg
+# cgacctgtatgcagatgaagagagggggtttctgatcaccctacatgtcccagctgcacaggggcagcagactgtactgatcaaaccaagctgtacat
+# accaagatgcagttacaacagagagcattcaggtacatggttcagaagtgagtgttgagcgtcctgcatactctgtggactgcaaaatgtctcccgag
+# gttgagcgtgagtggcaccgcgttcaagccatggaggacatgtctgctgcgcgggctgcagccgacggaggcgatttctcccaggccgtgtcgatcct
+# cgaaggccgcacgaggatcctggagtcacaggcagcgcaatcttcagacagccagtgcctggcgctgatcacggagctgagggagatgcaggagaggg
+# tggaaagccggaggaggtacgacgaatcaggcagggccttcatgctggcaggcctgagctcgcactcgtggcagagggccacggcgcgcggcgactcg
+# acggagctcaacacccaaatccacacctaccagacgccgtcgatggtcgacatgctgcaccgctcgcagactctcgtgcccgccgtcgtcgagatgct
+# gaaccgctccccgaccgttgctccttcacgcggctccggccggtcggtgaggtcgacaaaatccttctccgagcggctggcgtga]
+# protein sequence = [MADAWGRAKRALATKLCIRLPDRQRALEDAPPPPPPGREAHHPTTAVEAGPATGEEKARSPSVSSRRLSSSGSRGSKR
+# VCAICLGSMRTGHGQALFTAECSHKFHFHCITSNVRHGNHICPICRADWKELPFQGPQLADATHGRARVSPVNWPQDDGHMAVIRRLSNSYSGNLLEQ
+# FPVFRTPEADIFNDDEQIDIQSETVEDSNAVTGSVEIKTYAEVQAIQQSVTQKVFSILIHLKAPKSLESVSSRAPLDLVTVLDVSGSMKGAKLALLKK
+# AMGFVIQTLGPNDRLSVIAFSSTARRLFPLRQMNVNGRMQAMHAVNSLVDGGGTNISDGLKKGAKVIEHRRLKNPVCSIILLSDGQDTYSVPTFDDGV
+# QTNHSMLVPPSILPGTGNHVQIHTFGFGADHDSAAMHAIAETSSGTFSFIDAEGSIQNGFAQCIGGLLSVVVKEMRLGVECVDEGVVLTSIKSGGYAS
+# EVAVDGRNGSVDIGDLYADEERGFLITLHVPAAQGQQTVLIKPSCTYQDAVTTESIQVHGSEVSVERPAYSVDCKMSPEVEREWHRVQAMEDMSAARA
+# AADGGDFSQAVSILEGRTRILESQAAQSSDSQCLALITELREMQERVESRRRYDESGRAFMLAGLSSHSWQRATARGDSTELNTQIHTYQTPSMVDML
+# HRSQTLVPAVVEMLNRSPTVAPSRGSGRSVRSTKSFSERLA]
+# end gene g1
+###
+# start gene g2
+unnamed-1	AUGUSTUS	gene	12415	13535	0.06	-	.	g2
+unnamed-1	AUGUSTUS	transcript	12415	13535	0.06	-	.	g2.t1
+unnamed-1	AUGUSTUS	tts	12415	12415	.	-	.	transcript_id "g2.t1"; gene_id "g2";
+unnamed-1	AUGUSTUS	exon	12415	12983	.	-	.	transcript_id "g2.t1"; gene_id "g2";
+unnamed-1	AUGUSTUS	stop_codon	12512	12514	.	-	0	transcript_id "g2.t1"; gene_id "g2";
+unnamed-1	AUGUSTUS	terminal	12512	12983	1	-	1	transcript_id "g2.t1"; gene_id "g2";
+unnamed-1	AUGUSTUS	initial	13169	13434	0.74	-	0	transcript_id "g2.t1"; gene_id "g2";
+unnamed-1	AUGUSTUS	intron	12984	13168	1	-	.	transcript_id "g2.t1"; gene_id "g2";
+unnamed-1	AUGUSTUS	CDS	12512	12983	1	-	1	transcript_id "g2.t1"; gene_id "g2";
+unnamed-1	AUGUSTUS	CDS	13169	13434	0.74	-	0	transcript_id "g2.t1"; gene_id "g2";
+unnamed-1	AUGUSTUS	exon	13169	13535	.	-	.	transcript_id "g2.t1"; gene_id "g2";
+unnamed-1	AUGUSTUS	start_codon	13432	13434	.	-	0	transcript_id "g2.t1"; gene_id "g2";
+unnamed-1	AUGUSTUS	tss	13535	13535	.	-	.	transcript_id "g2.t1"; gene_id "g2";
+# coding sequence = [atggacgcgatgagcagcgcggtgttgcagggggcgtggaggaaggggccatggacggcgctggaggaccggctgctga
+# ccgagtacgtgcagcagcagggcgagggcagctggaactccgtcgccaagctcaccgggctgcggcggagcggcaagagctgccggctgcggtgggtg
+# aactacctccggccggacctgaagcggggcaagatcaccgccgacgaggagaccgtcatcctccagctccacgccatgctcggcaacaggtggtcggc
+# gatcgcgcggtgcctgccggggaggacggacaacgagatcaagaactactggcggacgcacttcaagaaggcgcggccgtccaggcgggccagggcgc
+# agctgctgcaccagtaccagctccagcagcagcagcagcaccgccagtacctccacgcgctgcacctcctccagcagcagcagcaggagatgcagatg
+# cagctgcagatggagcagcagacccaccagccgcaggtgatgatgatgcagcagcagagcccgccggaggaggaccaggccgtgatcaccaccgtcgg
+# caacatgaacagcatggaggctgcggagtgctactgcccgtgcccggcggcgtcggcggtgctcgaccttccgctcccggccgacgacgaggacgcgc
+# tctgggacagcctctggcggctcgtcgacggcgaggacggctccagcggaggcgactcaggcgagtactag]
+# protein sequence = [MDAMSSAVLQGAWRKGPWTALEDRLLTEYVQQQGEGSWNSVAKLTGLRRSGKSCRLRWVNYLRPDLKRGKITADEETV
+# ILQLHAMLGNRWSAIARCLPGRTDNEIKNYWRTHFKKARPSRRARAQLLHQYQLQQQQQHRQYLHALHLLQQQQQEMQMQLQMEQQTHQPQVMMMQQQ
+# SPPEEDQAVITTVGNMNSMEAAECYCPCPAASAVLDLPLPADDEDALWDSLWRLVDGEDGSSGGDSGEY]
+# end gene g2
+###
+# command line:
+# /data/www/augustus/augustus/bin/augustus --species=wheat --strand=both --singlestrand=false --genemodel=partial --codingseq=on --sample=100 --keep_viterbi=true --alternatives-from-sampling=true --minexonintronprob=0.2 --minmeanexonintronprob=0.5 --maxtracks=2 /data/www/augustus/webservice/data/AUG-1279836090/input.fa --exonnames=on
