@@ -13,7 +13,7 @@ _Introduction on the species, structural genomics and goal of this project, then
 Checking GC content in this region to have an idea about potential gene desnitites. For that we run the script:  
 
 ```bash
-python src/GCcontent.py data/region8.fasta
+$ python src/GCcontent.py data/region8.fasta
 ```
 The GC content of the DNA sequence is 48%.
 
@@ -28,11 +28,11 @@ Want to localize this region by mapping agaisnt the reference sequence of _Triti
 To validate the predicted genes, we will start of by blasting against the proteome of _Triticum aestivum_ available on UniProt. We retrieved the list of proteins from the supplementary material of an International Wheat Genome Sequencing Consortium (IWGSC) published in _Science_[^5] aiming to provide an annotated reference sequence of the _Triticum aestivum_ genome. The article is available [here](https://europepmc.org/article/MED/30115783). We will access all the proteins sequences (including isoforms) using an api call to the UniProt database.
 
 ```bash
-curl https://rest.uniprot.org/uniprotkb/stream?compressed=true&format=fasta&query=%28%28lit_pubmed%3A30115783%29%29 > data/proteins.fasta.gz
-gunzip data/proteins.fasta.gz
+$ curl https://rest.uniprot.org/uniprotkb/stream?compressed=true&format=fasta&query=%28%28lit_pubmed%3A30115783%29%29 > data/proteins.fasta.gz
+$ sgunzip data/web_retrieved_sequences/proteins.fasta.gz
 ```
 ```bash
-cat data/proteins.fasta | grep '>' | wc -l 
+$ cat data////////proteins.fasta | grep '>' | wc -l 
 130283
 ```
 There is a total of 130283 proteins in the file. We will now perform a BLAST search against this database to see if our predicted genes are similar to any of the known annotated proteins of _Triticum aestivum_. It'll be a tblastn search, as we are looking for protein sequences that are similar to our DNA sequence (which increases the sensitivity of the search, as it takes into account the codon degenracy). 
