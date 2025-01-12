@@ -6,3 +6,4 @@ test/
 tools/
 data/web_retrieved_sequences
 output/blast
+data/sequences/cDNA
