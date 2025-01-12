@@ -4,6 +4,11 @@ test/
 # !utils/test/
 # references.bib
 tools/
-data/web_retrieved_sequences
-output/blast
+
+#-- blast dbs and large fastas
+data/database/ 
 data/sequences/cDNA
+data/web_retrieved_sequences
+
+
+output/blast
