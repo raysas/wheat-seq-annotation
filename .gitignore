@@ -11,4 +11,4 @@ data/sequences/cDNA
 data/web_retrieved_sequences
 
 
-output/blast
+# output/blast

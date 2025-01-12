@@ -38,16 +38,8 @@ There is a total of 130283 proteins in the file. We will now perform a BLAST sea
 
 ```bash
 # --creating the local database
-makeblastdb -in data/web_retrieved_sequences/proteins.fasta \
-            -dbtype prot \
-            -out data/database/Triticum_aestivum_proteome/Triticum_aestivum_proteome
-```
-```bash
 # --running the blast search  
-tblastn -query output/AUGUSTUS_predicted.fna \
-       -db data/database/Triticum_aestivum_proteome/Triticum_aestivum_proteome \
-       -out output/blast/Triticum_aestivum_proteome_results.txt \
-       -outfmt 7
+# still under dev, look at script in src/blast.sh
 ```
 
 
