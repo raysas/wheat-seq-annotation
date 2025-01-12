@@ -1,4 +1,4 @@
-![header image](./assets/wheat-genome-3green.png)
+![header image](./assets/wheat-genome-green.png)
 
 
 
@@ -29,7 +29,7 @@ To validate the predicted genes, we will start of by blasting against the proteo
 
 ```bash
 $ curl https://rest.uniprot.org/uniprotkb/stream?compressed=true&format=fasta&query=%28%28lit_pubmed%3A30115783%29%29 > data/proteins.fasta.gz
-$ sgunzip data/web_retrieved_sequences/proteins.fasta.gz
+$ gunzip data/web_retrieved_sequences/proteins.fasta.gz
 ```
 ```bash
 $ cat data/proteins.fasta | grep '>' | wc -l 
@@ -39,11 +39,17 @@ There is a total of 130283 proteins in the file. We will now perform a BLAST sea
 
 ```bash
 # --creating the local database
-makeblastdb -in data/proteins.fasta -dbtype prot -out data/database/Triticum_aestivum_proteins_uniprot
-# --running the blast search  
-tblastn -query data/region8.fasta -db data/database/Triticum_aestivum_proteins_uniprot -out output/blast/ region8_vs_Triticum_aestivum_proteins_uniprot.blast -outfmt 7
+makeblastdb -in data/web_retrieved_sequences/proteins.fasta \
+            -dbtype prot \
+            -out data/database/Triticum_aestivum_proteome/Triticum_aestivum_proteome
 ```
-
+```bash
+# --running the blast search  
+tblastn -query output/AUGUSTUS_predicted.fna \
+       -db data/database/Triticum_aestivum_proteome/Triticum_aestivum_proteome \
+       -out output/blast/Triticum_aestivum_proteome_results.txt \
+       -outfmt 7
+```
 
 
 ### Transcriptome 

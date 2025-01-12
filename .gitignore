@@ -5,3 +5,4 @@ test/
 # references.bib
 tools/
 data/web_retrieved_sequences
+output/blast
