@@ -1,0 +1,14 @@
+
+Seqid	Source	Type	Length	Start	End	Score	Strand	Phase	Attributes
+wheat_53611	SNAP	gene	3017	7590	10606	0	+	.	ID=gwheat_53611-snap.002;Name=SNAPGENE.1
+wheat_53611	SNAP	mRNA	3017	7590	10606	0	+	.	ID=mwheat_53611-snap.002;Parent=gwheat_53611-snap.002
+wheat_53611	SNAP	CDS	29	7590	7618	-4.180	+	.	Parent=mwheat_53611-snap.002
+wheat_53611	SNAP	exon	29	7590	7618	-4.180	+	.	Parent=mwheat_53611-snap.002
+wheat_53611	SNAP	CDS	1783	8824	10606	101.471	+	.	Parent=mwheat_53611-snap.002
+wheat_53611	SNAP	exon	1783	8824	10606	101.471	+	.	Parent=mwheat_53611-snap.002
+wheat_53611	SNAP	gene	414	13021	13434	0	-	.	ID=gwheat_53611-snap.004;Name=SNAPGENE.2
+wheat_53611	SNAP	mRNA	414	13021	13434	0	-	.	ID=mwheat_53611-snap.004;Parent=gwheat_53611-snap.004
+wheat_53611	SNAP	CDS	266	13169	13434	81.233	-	.	Parent=mwheat_53611-snap.004
+wheat_53611	SNAP	exon	266	13169	13434	81.233	-	.	Parent=mwheat_53611-snap.004
+wheat_53611	SNAP	CDS	100	13021	13120	4.245	-	.	Parent=mwheat_53611-snap.004
+wheat_53611	SNAP	exon	100	13021	13120	4.245	-	.	Parent=mwheat_53611-snap.004

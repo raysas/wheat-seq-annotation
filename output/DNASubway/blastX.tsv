@@ -1,0 +1,144 @@
+
+Seqid	Source	Type	Length	Start	End	Score	Strand	Phase	Attributes
+wheat_53611	BLASTX	match	240	13168	13407	116	-	.	ID=BLASTX_match00001;description=Transcription factor MYB57 OS=Arabidopsis thaliana GN=MYB57 PE=2 SV=1;score=116;significance=3e-25
+wheat_53611	BLASTX	match_part	240	13168	13407	290	-	.	Parent=BLASTX_match00001;Target=sp|Q9SSA1|MYB57_ARATH 22 101;score=290
+wheat_53611	BLASTX	match	228	13168	13395	110	-	.	ID=BLASTX_match00002;description=Transcription factor GAMYB OS=Oryza sativa subsp. indica GN=GAM1 PE=2 SV=1;score=110;significance=2e-23
+wheat_53611	BLASTX	match_part	228	13168	13395	274	-	.	Parent=BLASTX_match00002;Target=sp|A2WW87|GAM1_ORYSI 41 116;score=274
+wheat_53611	BLASTX	match	228	13168	13395	110	-	.	ID=BLASTX_match00003;description=Transcription factor GAMYB OS=Oryza sativa subsp. japonica GN=GAM1 PE=2 SV=1;score=110;significance=2e-23
+wheat_53611	BLASTX	match_part	228	13168	13395	274	-	.	Parent=BLASTX_match00003;Target=sp|Q0JIC2|GAM1_ORYSJ 41 116;score=274
+wheat_53611	BLASTX	match	228	13168	13395	109	-	.	ID=BLASTX_match00004;description=Transcription factor MYB21 OS=Arabidopsis thaliana GN=MYB21 PE=1 SV=1;score=109;significance=3e-23
+wheat_53611	BLASTX	match_part	228	13168	13395	273	-	.	Parent=BLASTX_match00004;Target=sp|Q9LK95|MYB21_ARATH 21 96;score=273
+wheat_53611	BLASTX	match	228	13168	13395	109	-	.	ID=BLASTX_match00005;description=Transcription factor MYB24 OS=Arabidopsis thaliana GN=MYB24 PE=1 SV=1;score=109;significance=3e-23
+wheat_53611	BLASTX	match_part	228	13168	13395	273	-	.	Parent=BLASTX_match00005;Target=sp|Q9SPG9|MYB24_ARATH 18 93;score=273
+wheat_53611	BLASTX	match	228	13168	13395	108	-	.	ID=BLASTX_match00006;description=Myb-related protein 305 OS=Antirrhinum majus GN=MYB305 PE=2 SV=1;score=108;significance=5e-23
+wheat_53611	BLASTX	match_part	228	13168	13395	271	-	.	Parent=BLASTX_match00006;Target=sp|P81391|MYB05_ANTMA 14 89;score=271
+wheat_53611	BLASTX	match	87	12905	12991	53.5	-	.	ID=BLASTX_match00007;description=Myb-related protein 305 OS=Antirrhinum majus GN=MYB305 PE=2 SV=1;score=53.5;significance=3e-06
+wheat_53611	BLASTX	match_part	87	12905	12991	127	-	.	Parent=BLASTX_match00007;Target=sp|P81391|MYB05_ANTMA 87 115;score=127
+wheat_53611	BLASTX	match	228	13168	13395	108	-	.	ID=BLASTX_match00008;description=Transcription factor MYB12 OS=Arabidopsis thaliana GN=MYB12 PE=2 SV=1;score=108;significance=7e-23
+wheat_53611	BLASTX	match_part	228	13168	13395	270	-	.	Parent=BLASTX_match00008;Target=sp|O22264|MYB12_ARATH 13 88;score=270
+wheat_53611	BLASTX	match	228	13168	13395	107	-	.	ID=BLASTX_match00009;description=Myb-related protein 340 OS=Antirrhinum majus GN=MYB340 PE=2 SV=1;score=107;significance=2e-22
+wheat_53611	BLASTX	match_part	228	13168	13395	267	-	.	Parent=BLASTX_match00009;Target=sp|P81396|MYB40_ANTMA 14 89;score=267
+wheat_53611	BLASTX	match	228	13168	13395	107	-	.	ID=BLASTX_match00010;description=Transcription repressor MYB5 OS=Arabidopsis thaliana GN=MYB5 PE=1 SV=1;score=107;significance=2e-22
+wheat_53611	BLASTX	match_part	228	13168	13395	266	-	.	Parent=BLASTX_match00010;Target=sp|Q38850|MYB5_ARATH 24 99;score=266
+wheat_53611	BLASTX	match	87	12905	12991	52.0	-	.	ID=BLASTX_match00011;description=Transcription repressor MYB5 OS=Arabidopsis thaliana GN=MYB5 PE=1 SV=1;score=52.0;significance=8e-06
+wheat_53611	BLASTX	match_part	87	12905	12991	123	-	.	Parent=BLASTX_match00011;Target=sp|Q38850|MYB5_ARATH 97 125;score=123
+wheat_53611	BLASTX	match	228	13168	13395	106	-	.	ID=BLASTX_match00012;description=Transcription factor MYB86 OS=Arabidopsis thaliana GN=MYB86 PE=2 SV=1;score=106;significance=3e-22
+wheat_53611	BLASTX	match_part	228	13168	13395	265	-	.	Parent=BLASTX_match00012;Target=sp|Q8LPH6|MYB86_ARATH 13 88;score=265
+wheat_53611	BLASTX	match	228	13168	13395	105	-	.	ID=BLASTX_match00013;description=Myb-related protein P OS=Zea mays GN=P PE=2 SV=1;score=105;significance=5e-22
+wheat_53611	BLASTX	match_part	228	13168	13395	263	-	.	Parent=BLASTX_match00013;Target=sp|P27898|MYBP_MAIZE 13 88;score=263
+wheat_53611	BLASTX	match	585	12811	13395	105	-	.	ID=BLASTX_match00014;description=Anthocyanin regulatory C1 protein OS=Zea mays GN=C1 PE=2 SV=1;score=105;significance=5e-22
+wheat_53611	BLASTX	match_part	585	12811	13395	263	-	.	Parent=BLASTX_match00014;Target=sp|P10290|MYBC_MAIZE 13 181;score=263
+wheat_53611	BLASTX	match	231	13168	13398	105	-	.	ID=BLASTX_match00015;description=Transcription factor WER OS=Arabidopsis thaliana GN=WER PE=1 SV=1;score=105;significance=8e-22
+wheat_53611	BLASTX	match_part	231	13168	13398	261	-	.	Parent=BLASTX_match00015;Target=sp|Q9SEI0|WER_ARATH 16 92;score=261
+wheat_53611	BLASTX	match	246	13168	13413	105	-	.	ID=BLASTX_match00016;description=Transcription factor MYB59 OS=Arabidopsis thaliana GN=MYB59 PE=2 SV=2;score=105;significance=8e-22
+wheat_53611	BLASTX	match_part	246	13168	13413	261	-	.	Parent=BLASTX_match00016;Target=sp|Q4JL84|MYB59_ARATH 3 84;score=261
+wheat_53611	BLASTX	match	105	12887	12991	58.2	-	.	ID=BLASTX_match00017;description=Transcription factor MYB59 OS=Arabidopsis thaliana GN=MYB59 PE=2 SV=2;score=58.2;significance=1e-07
+wheat_53611	BLASTX	match_part	105	12887	12991	139	-	.	Parent=BLASTX_match00017;Target=sp|Q4JL84|MYB59_ARATH 82 117;score=139
+wheat_53611	BLASTX	match	225	13168	13392	105	-	.	ID=BLASTX_match00018;description=Transcription factor MYB3 OS=Arabidopsis thaliana GN=MYB3 PE=1 SV=1;score=105;significance=8e-22
+wheat_53611	BLASTX	match_part	225	13168	13392	261	-	.	Parent=BLASTX_match00018;Target=sp|Q9S9K9|MYB3_ARATH 14 88;score=261
+wheat_53611	BLASTX	match	102	12890	12991	52.8	-	.	ID=BLASTX_match00019;description=Transcription factor MYB3 OS=Arabidopsis thaliana GN=MYB3 PE=1 SV=1;score=52.8;significance=5e-06
+wheat_53611	BLASTX	match_part	102	12890	12991	125	-	.	Parent=BLASTX_match00019;Target=sp|Q9S9K9|MYB3_ARATH 86 119;score=125
+wheat_53611	BLASTX	match	228	13168	13395	105	-	.	ID=BLASTX_match00020;description=Transcription factor MYB108 OS=Arabidopsis thaliana GN=MYB108 PE=1 SV=1;score=105;significance=8e-22
+wheat_53611	BLASTX	match_part	228	13168	13395	261	-	.	Parent=BLASTX_match00020;Target=sp|Q9LDE1|MY108_ARATH 20 95;score=261
+wheat_53611	BLASTX	match	198	12794	12991	52.8	-	.	ID=BLASTX_match00021;description=Transcription factor MYB108 OS=Arabidopsis thaliana GN=MYB108 PE=1 SV=1;score=52.8;significance=5e-06
+wheat_53611	BLASTX	match_part	198	12794	12991	125	-	.	Parent=BLASTX_match00021;Target=sp|Q9LDE1|MY108_ARATH 93 152;score=125
+wheat_53611	BLASTX	match	225	13168	13392	104	-	.	ID=BLASTX_match00022;description=Transcription repressor MYB6 OS=Arabidopsis thaliana GN=MYB6 PE=1 SV=1;score=104;significance=1e-21
+wheat_53611	BLASTX	match_part	225	13168	13392	260	-	.	Parent=BLASTX_match00022;Target=sp|Q38851|MYB6_ARATH 14 88;score=260
+wheat_53611	BLASTX	match	228	13168	13395	103	-	.	ID=BLASTX_match00023;description=Transcription factor MYB39 OS=Arabidopsis thaliana GN=MYB39 PE=2 SV=1;score=103;significance=2e-21
+wheat_53611	BLASTX	match_part	228	13168	13395	258	-	.	Parent=BLASTX_match00023;Target=sp|Q8GWP0|MYB39_ARATH 14 89;score=258
+wheat_53611	BLASTX	match	237	13159	13395	103	-	.	ID=BLASTX_match00024;description=Myb-related protein Myb4 OS=Oryza sativa subsp. japonica GN=MYB4 PE=2 SV=2;score=103;significance=2e-21
+wheat_53611	BLASTX	match_part	237	13159	13395	257	-	.	Parent=BLASTX_match00024;Target=sp|Q7XBH4|MYB4_ORYSJ 13 91;score=257
+wheat_53611	BLASTX	match	87	12905	12991	53.1	-	.	ID=BLASTX_match00025;description=Myb-related protein Myb4 OS=Oryza sativa subsp. japonica GN=MYB4 PE=2 SV=2;score=53.1;significance=4e-06
+wheat_53611	BLASTX	match_part	87	12905	12991	126	-	.	Parent=BLASTX_match00025;Target=sp|Q7XBH4|MYB4_ORYSJ 86 114;score=126
+wheat_53611	BLASTX	match	225	13168	13392	103	-	.	ID=BLASTX_match00026;description=Myb-related protein Zm38 OS=Zea mays PE=2 SV=1;score=103;significance=3e-21
+wheat_53611	BLASTX	match_part	225	13168	13392	256	-	.	Parent=BLASTX_match00026;Target=sp|P20025|MYB38_MAIZE 14 88;score=256
+wheat_53611	BLASTX	match	231	13168	13398	103	-	.	ID=BLASTX_match00027;description=Transcription factor MYB23 OS=Arabidopsis thaliana GN=MYB23 PE=1 SV=1;score=103;significance=3e-21
+wheat_53611	BLASTX	match_part	231	13168	13398	256	-	.	Parent=BLASTX_match00027;Target=sp|Q96276|MYB23_ARATH 12 88;score=256
+wheat_53611	BLASTX	match	228	13168	13395	102	-	.	ID=BLASTX_match00028;description=Transcription factor MYB48 OS=Arabidopsis thaliana GN=MYB48 PE=2 SV=1;score=102;significance=5e-21
+wheat_53611	BLASTX	match_part	228	13168	13395	254	-	.	Parent=BLASTX_match00028;Target=sp|Q9LX82|MYB48_ARATH 8 83;score=254
+wheat_53611	BLASTX	match	105	12887	12991	58.2	-	.	ID=BLASTX_match00029;description=Transcription factor MYB48 OS=Arabidopsis thaliana GN=MYB48 PE=2 SV=1;score=58.2;significance=1e-07
+wheat_53611	BLASTX	match_part	105	12887	12991	139	-	.	Parent=BLASTX_match00029;Target=sp|Q9LX82|MYB48_ARATH 81 116;score=139
+wheat_53611	BLASTX	match	225	13168	13392	102	-	.	ID=BLASTX_match00030;description=Myb-related protein 330 OS=Antirrhinum majus GN=MYB330 PE=2 SV=1;score=102;significance=5e-21
+wheat_53611	BLASTX	match_part	225	13168	13392	254	-	.	Parent=BLASTX_match00030;Target=sp|P81395|MYB30_ANTMA 14 88;score=254
+wheat_53611	BLASTX	match	102	12890	12991	54.3	-	.	ID=BLASTX_match00031;description=Myb-related protein 330 OS=Antirrhinum majus GN=MYB330 PE=2 SV=1;score=54.3;significance=2e-06
+wheat_53611	BLASTX	match_part	102	12890	12991	129	-	.	Parent=BLASTX_match00031;Target=sp|P81395|MYB30_ANTMA 86 119;score=129
+wheat_53611	BLASTX	match	225	13168	13392	101	-	.	ID=BLASTX_match00032;description=Transcription repressor MYB4 OS=Arabidopsis thaliana GN=MYB4 PE=1 SV=1;score=101;significance=1e-20
+wheat_53611	BLASTX	match_part	225	13168	13392	251	-	.	Parent=BLASTX_match00032;Target=sp|Q9SZP1|MYB4_ARATH 14 88;score=251
+wheat_53611	BLASTX	match	225	13168	13392	100	-	.	ID=BLASTX_match00033;description=Myb-related protein Hv1 OS=Hordeum vulgare GN=MYB1 PE=2 SV=1;score=100;significance=2e-20
+wheat_53611	BLASTX	match_part	225	13168	13392	249	-	.	Parent=BLASTX_match00033;Target=sp|P20026|MYB1_HORVU 14 88;score=249
+wheat_53611	BLASTX	match	102	12890	12991	52.4	-	.	ID=BLASTX_match00034;description=Myb-related protein Hv1 OS=Hordeum vulgare GN=MYB1 PE=2 SV=1;score=52.4;significance=6e-06
+wheat_53611	BLASTX	match_part	102	12890	12991	124	-	.	Parent=BLASTX_match00034;Target=sp|P20026|MYB1_HORVU 86 119;score=124
+wheat_53611	BLASTX	match	225	13168	13392	100	-	.	ID=BLASTX_match00035;description=Myb-related protein 308 OS=Antirrhinum majus GN=MYB308 PE=2 SV=1;score=100;significance=2e-20
+wheat_53611	BLASTX	match_part	225	13168	13392	249	-	.	Parent=BLASTX_match00035;Target=sp|P81393|MYB08_ANTMA 14 88;score=249
+wheat_53611	BLASTX	match	249	13159	13407	100	-	.	ID=BLASTX_match00036;description=Transcription factor MYB30 OS=Arabidopsis thaliana GN=MYB30 PE=1 SV=1;score=100;significance=3e-20
+wheat_53611	BLASTX	match_part	249	13159	13407	248	-	.	Parent=BLASTX_match00036;Target=sp|Q9SCU7|MYB30_ARATH 9 91;score=248
+wheat_53611	BLASTX	match	225	13168	13392	100	-	.	ID=BLASTX_match00037;description=Transcription factor MYB32 OS=Arabidopsis thaliana GN=MYB32 PE=2 SV=1;score=100;significance=3e-20
+wheat_53611	BLASTX	match_part	225	13168	13392	248	-	.	Parent=BLASTX_match00037;Target=sp|O49608|MYB32_ARATH 14 88;score=248
+wheat_53611	BLASTX	match	228	13168	13395	99.8	-	.	ID=BLASTX_match00038;description=Protein ODORANT1 OS=Petunia hybrida GN=ODO1 PE=2 SV=1;score=99.8;significance=3e-20
+wheat_53611	BLASTX	match_part	228	13168	13395	247	-	.	Parent=BLASTX_match00038;Target=sp|Q50EX6|ODO1_PETHY 13 88;score=247
+wheat_53611	BLASTX	match	87	12905	12991	52.4	-	.	ID=BLASTX_match00039;description=Protein ODORANT1 OS=Petunia hybrida GN=ODO1 PE=2 SV=1;score=52.4;significance=6e-06
+wheat_53611	BLASTX	match_part	87	12905	12991	124	-	.	Parent=BLASTX_match00039;Target=sp|Q50EX6|ODO1_PETHY 86 114;score=124
+wheat_53611	BLASTX	match	228	13168	13395	99.8	-	.	ID=BLASTX_match00040;description=Myb-related protein 315 OS=Antirrhinum majus GN=MYB315 PE=2 SV=1;score=99.8;significance=3e-20
+wheat_53611	BLASTX	match_part	228	13168	13395	247	-	.	Parent=BLASTX_match00040;Target=sp|P81394|MYB15_ANTMA 13 88;score=247
+wheat_53611	BLASTX	match	87	12905	12991	53.1	-	.	ID=BLASTX_match00041;description=Myb-related protein 315 OS=Antirrhinum majus GN=MYB315 PE=2 SV=1;score=53.1;significance=4e-06
+wheat_53611	BLASTX	match_part	87	12905	12991	126	-	.	Parent=BLASTX_match00041;Target=sp|P81394|MYB15_ANTMA 86 114;score=126
+wheat_53611	BLASTX	match	255	13168	13422	99.4	-	.	ID=BLASTX_match00042;description=Transcription factor TT2 OS=Arabidopsis thaliana GN=TT2 PE=1 SV=1;score=99.4;significance=4e-20
+wheat_53611	BLASTX	match_part	255	13168	13422	246	-	.	Parent=BLASTX_match00042;Target=sp|Q9FJA2|TT2_ARATH 6 90;score=246
+wheat_53611	BLASTX	match	237	13159	13395	99.4	-	.	ID=BLASTX_match00043;description=Transcription factor MYB51 OS=Arabidopsis thaliana GN=MYB51 PE=1 SV=2;score=99.4;significance=4e-20
+wheat_53611	BLASTX	match_part	237	13159	13395	246	-	.	Parent=BLASTX_match00043;Target=sp|O49782|MYB51_ARATH 14 92;score=246
+wheat_53611	BLASTX	match	93	12905	12997	57.8	-	.	ID=BLASTX_match00044;description=Transcription factor MYB51 OS=Arabidopsis thaliana GN=MYB51 PE=1 SV=2;score=57.8;significance=1e-07
+wheat_53611	BLASTX	match_part	93	12905	12997	138	-	.	Parent=BLASTX_match00044;Target=sp|O49782|MYB51_ARATH 85 115;score=138
+wheat_53611	BLASTX	match	228	13168	13395	99.4	-	.	ID=BLASTX_match00045;description=Transcription factor MYB29 OS=Arabidopsis thaliana GN=MYB29 PE=1 SV=1;score=99.4;significance=4e-20
+wheat_53611	BLASTX	match_part	228	13168	13395	246	-	.	Parent=BLASTX_match00045;Target=sp|Q9FLR1|MYB29_ARATH 13 88;score=246
+wheat_53611	BLASTX	match	87	12905	12991	52.8	-	.	ID=BLASTX_match00046;description=Transcription factor MYB29 OS=Arabidopsis thaliana GN=MYB29 PE=1 SV=1;score=52.8;significance=5e-06
+wheat_53611	BLASTX	match_part	87	12905	12991	125	-	.	Parent=BLASTX_match00046;Target=sp|Q9FLR1|MYB29_ARATH 86 114;score=125
+wheat_53611	BLASTX	match	237	13159	13395	99.4	-	.	ID=BLASTX_match00047;description=Transcription factor MYB122 OS=Arabidopsis thaliana GN=MYB122 PE=1 SV=1;score=99.4;significance=4e-20
+wheat_53611	BLASTX	match_part	237	13159	13395	246	-	.	Parent=BLASTX_match00047;Target=sp|Q9C9C8|MY122_ARATH 13 91;score=246
+wheat_53611	BLASTX	match	237	13159	13395	99.0	-	.	ID=BLASTX_match00048;description=Myb-related protein 306 OS=Antirrhinum majus GN=MYB306 PE=2 SV=1;score=99.0;significance=6e-20
+wheat_53611	BLASTX	match_part	237	13159	13395	245	-	.	Parent=BLASTX_match00048;Target=sp|P81392|MYB06_ANTMA 13 91;score=245
+wheat_53611	BLASTX	match	228	13168	13395	98.2	-	.	ID=BLASTX_match00049;description=Myb-related protein Pp2 OS=Physcomitrella patens subsp. patens GN=PP2 PE=2 SV=1;score=98.2;significance=1e-19
+wheat_53611	BLASTX	match_part	228	13168	13395	243	-	.	Parent=BLASTX_match00049;Target=sp|P80073|MYB2_PHYPA 13 88;score=243
+wheat_53611	BLASTX	match	228	13168	13395	97.4	-	.	ID=BLASTX_match00050;description=Transcription factor MYB46 OS=Arabidopsis thaliana GN=MYB46 PE=2 SV=1;score=97.4;significance=2e-19
+wheat_53611	BLASTX	match_part	228	13168	13395	241	-	.	Parent=BLASTX_match00050;Target=sp|Q9LXV2|MYB46_ARATH 19 94;score=241
+wheat_53611	BLASTX	match	231	13168	13398	97.4	-	.	ID=BLASTX_match00051;description=Trichome differentiation protein GL1 OS=Arabidopsis thaliana GN=GL1 PE=1 SV=2;score=97.4;significance=2e-19
+wheat_53611	BLASTX	match_part	231	13168	13398	241	-	.	Parent=BLASTX_match00051;Target=sp|P27900|GL1_ARATH 14 90;score=241
+wheat_53611	BLASTX	match	228	13168	13395	97.1	-	.	ID=BLASTX_match00052;description=Transcription factor MYB76 OS=Arabidopsis thaliana GN=MYB76 PE=1 SV=1;score=97.1;significance=2e-19
+wheat_53611	BLASTX	match_part	228	13168	13395	240	-	.	Parent=BLASTX_match00052;Target=sp|Q9SPG5|MYB76_ARATH 13 88;score=240
+wheat_53611	BLASTX	match	87	12905	12991	52.4	-	.	ID=BLASTX_match00053;description=Transcription factor MYB76 OS=Arabidopsis thaliana GN=MYB76 PE=1 SV=1;score=52.4;significance=6e-06
+wheat_53611	BLASTX	match_part	87	12905	12991	124	-	.	Parent=BLASTX_match00053;Target=sp|Q9SPG5|MYB76_ARATH 86 114;score=124
+wheat_53611	BLASTX	match	228	13168	13395	96.7	-	.	ID=BLASTX_match00054;description=Transcription factor MYB28 OS=Arabidopsis thaliana GN=MYB28 PE=1 SV=1;score=96.7;significance=3e-19
+wheat_53611	BLASTX	match_part	228	13168	13395	239	-	.	Parent=BLASTX_match00054;Target=sp|Q9SPG2|MYB28_ARATH 13 88;score=239
+wheat_53611	BLASTX	match	87	12905	12991	52.8	-	.	ID=BLASTX_match00055;description=Transcription factor MYB28 OS=Arabidopsis thaliana GN=MYB28 PE=1 SV=1;score=52.8;significance=5e-06
+wheat_53611	BLASTX	match_part	87	12905	12991	125	-	.	Parent=BLASTX_match00055;Target=sp|Q9SPG2|MYB28_ARATH 86 114;score=125
+wheat_53611	BLASTX	match	237	13159	13395	96.3	-	.	ID=BLASTX_match00056;description=Transcription factor MYB34 OS=Arabidopsis thaliana GN=MYB34 PE=1 SV=1;score=96.3;significance=4e-19
+wheat_53611	BLASTX	match_part	237	13159	13395	238	-	.	Parent=BLASTX_match00056;Target=sp|O64399|MYB34_ARATH 13 91;score=238
+wheat_53611	BLASTX	match	228	13168	13395	95.9	-	.	ID=BLASTX_match00057;description=Myb-related protein MYBAS2 OS=Oryza sativa subsp. japonica GN=MYBAS2 PE=2 SV=1;score=95.9;significance=5e-19
+wheat_53611	BLASTX	match_part	228	13168	13395	237	-	.	Parent=BLASTX_match00057;Target=sp|Q4JL76|MYBA2_ORYSJ 9 84;score=237
+wheat_53611	BLASTX	match	108	12884	12991	59.3	-	.	ID=BLASTX_match00058;description=Myb-related protein MYBAS2 OS=Oryza sativa subsp. japonica GN=MYBAS2 PE=2 SV=1;score=59.3;significance=5e-08
+wheat_53611	BLASTX	match_part	108	12884	12991	142	-	.	Parent=BLASTX_match00058;Target=sp|Q4JL76|MYBA2_ORYSJ 82 117;score=142
+wheat_53611	BLASTX	match	228	13168	13395	95.5	-	.	ID=BLASTX_match00059;description=Transcription factor MYB113 OS=Arabidopsis thaliana GN=MYB113 PE=1 SV=1;score=95.5;significance=6e-19
+wheat_53611	BLASTX	match_part	228	13168	13395	236	-	.	Parent=BLASTX_match00059;Target=sp|Q9FNV9|MY113_ARATH 9 84;score=236
+wheat_53611	BLASTX	match	228	13168	13395	95.1	-	.	ID=BLASTX_match00060;description=Transcription factor MYB75 OS=Arabidopsis thaliana GN=MYB75 PE=1 SV=1;score=95.1;significance=8e-19
+wheat_53611	BLASTX	match_part	228	13168	13395	235	-	.	Parent=BLASTX_match00060;Target=sp|Q9FE25|MYB75_ARATH 9 84;score=235
+wheat_53611	BLASTX	match	228	13168	13395	95.1	-	.	ID=BLASTX_match00061;description=Transcription factor MYB114 OS=Arabidopsis thaliana GN=MYB114 PE=1 SV=1;score=95.1;significance=8e-19
+wheat_53611	BLASTX	match_part	228	13168	13395	235	-	.	Parent=BLASTX_match00061;Target=sp|Q9FNV8|MY114_ARATH 9 84;score=235
+wheat_53611	BLASTX	match	255	13168	13422	93.6	-	.	ID=BLASTX_match00062;description=Myb-related protein Hv33 OS=Hordeum vulgare GN=MYB2 PE=2 SV=3;score=93.6;significance=2e-18
+wheat_53611	BLASTX	match_part	255	13168	13422	231	-	.	Parent=BLASTX_match00062;Target=sp|P20027|MYB3_HORVU 6 90;score=231
+wheat_53611	BLASTX	match	228	13168	13395	93.6	-	.	ID=BLASTX_match00063;description=Transcription factor MYB82 OS=Arabidopsis thaliana GN=MYB82 PE=1 SV=1;score=93.6;significance=2e-18
+wheat_53611	BLASTX	match_part	228	13168	13395	231	-	.	Parent=BLASTX_match00063;Target=sp|Q9LTF7|MYB82_ARATH 13 88;score=231
+wheat_53611	BLASTX	match	114	12878	12991	56.2	-	.	ID=BLASTX_match00064;description=Transcription factor MYB82 OS=Arabidopsis thaliana GN=MYB82 PE=1 SV=1;score=56.2;significance=4e-07
+wheat_53611	BLASTX	match_part	114	12878	12991	134	-	.	Parent=BLASTX_match00064;Target=sp|Q9LTF7|MYB82_ARATH 86 123;score=134
+wheat_53611	BLASTX	match	228	13168	13395	92.4	-	.	ID=BLASTX_match00065;description=Transcription factor MYB90 OS=Arabidopsis thaliana GN=MYB90 PE=1 SV=1;score=92.4;significance=5e-18
+wheat_53611	BLASTX	match_part	228	13168	13395	228	-	.	Parent=BLASTX_match00065;Target=sp|Q9ZTC3|MYB90_ARATH 9 84;score=228
+wheat_53611	BLASTX	match	243	13168	13410	85.5	-	.	ID=BLASTX_match00066;description=Transcription factor MYB104 OS=Arabidopsis thaliana GN=MYB104 PE=2 SV=3;score=85.5;significance=6e-16
+wheat_53611	BLASTX	match_part	243	13168	13410	210	-	.	Parent=BLASTX_match00066;Target=sp|Q9SM27|MY104_ARATH 12 92;score=210
+wheat_53611	BLASTX	match	258	13168	13425	70.1	-	.	ID=BLASTX_match00067;description=Transcription factor MYB98 OS=Arabidopsis thaliana GN=MYB98 PE=2 SV=1;score=70.1;significance=3e-11
+wheat_53611	BLASTX	match_part	258	13168	13425	170	-	.	Parent=BLASTX_match00067;Target=sp|Q9S7L2|MYB98_ARATH 198 290;score=170
+wheat_53611	BLASTX	match	339	12653	12991	61.2	-	.	ID=BLASTX_match00068;description=Transcription factor RAX3 OS=Arabidopsis thaliana GN=RAX3 PE=2 SV=1;score=61.2;significance=1e-08
+wheat_53611	BLASTX	match_part	339	12653	12991	147	-	.	Parent=BLASTX_match00068;Target=sp|Q9M2Y9|RAX3_ARATH 87 204;score=147
+wheat_53611	BLASTX	match	105	12887	12991	60.1	-	.	ID=BLASTX_match00069;description=Myb-related protein MYBAS1 OS=Oryza sativa subsp. japonica GN=MYBAS1 PE=2 SV=1;score=60.1;significance=3e-08
+wheat_53611	BLASTX	match_part	105	12887	12991	144	-	.	Parent=BLASTX_match00069;Target=sp|Q53NK6|MYBA1_ORYSJ 82 116;score=144
+wheat_53611	BLASTX	match	111	12881	12991	55.1	-	.	ID=BLASTX_match00070;description=Myb-related protein Zm1 OS=Zea mays PE=2 SV=1;score=55.1;significance=9e-07
+wheat_53611	BLASTX	match_part	111	12881	12991	131	-	.	Parent=BLASTX_match00070;Target=sp|P20024|MYB1_MAIZE 88 124;score=131
+wheat_53611	BLASTX	match	87	12905	12991	53.1	-	.	ID=BLASTX_match00071;description=Transcription factor LAF1 OS=Arabidopsis thaliana GN=LAF1 PE=1 SV=2;score=53.1;significance=4e-06
+wheat_53611	BLASTX	match_part	87	12905	12991	126	-	.	Parent=BLASTX_match00071;Target=sp|Q9M0K4|LAF1_ARATH 84 112;score=126
