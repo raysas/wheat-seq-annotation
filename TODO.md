@@ -13,9 +13,10 @@
 
 ## Tools:  
 
-- [ ] FGENESH    
+- [x] FGENESH    
 - [ ] GrainGenes  
-- [ ] DNASubway  
+- [x] DNASubway  
+- [x] Augustus
 
 
 

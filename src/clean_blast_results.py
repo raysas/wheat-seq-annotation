@@ -1,12 +1,17 @@
 import csv
 import os
 from uniprot_api import fetch_uniprot_annotation
+import sys
+
+input_file = sys.argv[1]
 
 # input_file = "output/blast/FGENESH_Triticum_aestivum_proteome_results.txt"  
-input_file = "output/blast/AUGUSTUS_Triticum_aestivum_proteome_results.txt"  
+# input_file = "output/blast/AUGUSTUS_Triticum_aestivum_proteome_results.txt"  
 base_name=os.path.basename(input_file)
 parent_dir=os.path.dirname(input_file)
-output_file = os.path.join(parent_dir, f"annotated_{base_name}")  
+parent_parent_dir=os.path.dirname(parent_dir)
+new_parent_dir=os.path.join(parent_parent_dir,"annotated")
+output_file = os.path.join(new_parent_dir, f"annotated_{base_name}")  
 
 # output_file = "processed_file.txt"  
 
