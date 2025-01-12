@@ -1,8 +1,7 @@
-![header image](./assets/wheat-genome-green.png)
-
-
-
 # Project - M1 GENIOMHE 2024/25: 
+
+<!-- ![](./assets/wheat-genome-green.png) -->
+
 
 _Introduction on the species, structural genomics and goal of this project, then discuss potential issues that might arise due to complexity. Proceed by summarizing the desired workflow highlighting the criteria demanded by the instructor to be fulfilled_
 
