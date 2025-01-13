@@ -25,3 +25,12 @@ artemis/art
 # ```
 artemis/art utils/example/thaliana_example.fasta
 # ```
+
+
+# ------------------- Genome Alignment -------------------
+# <> bwa-mem2
+sudo apt-get install bwa-mem2
+# <> samtools
+sudo apt-get install samtools
+# <> bedtools
+sudo apt-get install bedtools
