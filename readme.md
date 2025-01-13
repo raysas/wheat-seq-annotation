@@ -33,6 +33,8 @@ author: "Group members:"
 
 _Introduction on the species, structural genomics and goal of this project, then discuss potential issues that might arise due to complexity. Proceed by summarizing the desired workflow highlighting the criteria demanded by the instructor to be fulfilled_
 
+![](image.png)
+
 # Exploration
 
 ## Sequence properties
@@ -164,7 +166,7 @@ $ gunzip data/sequences/proteome/Aegilops_tauschii_proteins.fasta.gz
 
 ## Transcriptome 
 
-_ still testing, might remove later_
+_still testing, might remove later_
 
 The [_European Nucleotide Archive (ENA)_](https://www.ebi.ac.uk/ena/browser/home) comprises a large collection of sequencing data from raw sequences to assembly to functionally annotated ones. While looking for [transcriptome studies for _Triticum aestivum_](https://www.ebi.ac.uk/ena/browser/view/Taxon:4565) we find several projects (Total= 22, in this table[^1]) 
 
@@ -197,6 +199,8 @@ _trying to perform RNA-seq aln and viz using IGV_
 
 cDNA (complementary DNA) is a single-stranded DNA synthesized from a messenger RNA (mRNA) template in a reaction catalyzed by the enzyme reverse transcriptase. It is thus synthesized from the mRNA template, it can be used to study the gene expression in a cell, as it is a copy of the mRNA, and can be used to study the gene expression in a cell. It's a representation of a gene's transcript.  
 On Ensembl Plants, we can find the cDNA of _Triticum aestivum_ [_here on this ftp site (click link)_](https://plants.ensembl.org/Triticum_aestivum/Info/Index). There is one fasta file containing all of the genome's cDNA sequences, with a particular header format. To make the process more easily computable, we wrote  a bash script to filter the cDNA sequences of the chromosome 4D, and save them in a separate file.  
+
+_also downloaded pep, CDS, ncRNA and annotations (gff)_
 
 
 
