@@ -1,0 +1,14 @@
+##gff-version 3
+##date=2025-01-12
+##source-version=geneid v1.2 -- geneid@imim.es
+# Sequence region8 - Length = 14001 bps
+# Optimal Gene Structure. 3 genes. Score = 81.42
+##sequence-region region8 1 14001
+region8	geneid_v1.2	gene	6532	7759	18.70	+	.	ID=gene1;score=18.70
+region8	geneid_v1.2	exon	6532	6762	20.41	+	.	ID=exon1_gene1;Parent=gene1;score=20.41
+region8	geneid_v1.2	exon	7754	7759	-1.71	+	.	ID=exon2_gene1;Parent=gene1;score=-1.71
+region8	geneid_v1.2	gene	10160	10606	11.07	+	.	ID=gene2;score=11.07
+region8	geneid_v1.2	exon	10160	10606	11.07	+	.	ID=exon1_gene2;Parent=gene2;score=11.07
+region8	geneid_v1.2	gene	12512	13434	51.65	-	.	ID=gene3;score=51.65
+region8	geneid_v1.2	exon	12512	12983	32.63	-	.	ID=exon1_gene3;Parent=gene3;score=32.63
+region8	geneid_v1.2	exon	13169	13434	19.02	-	.	ID=exon2_gene3;Parent=gene3;score=19.02

@@ -8,7 +8,7 @@ tools/
 #-- blast dbs and large fastas
 data/database/ 
 data/sequences/ 
-!data/sequences/cDNA/Triticum_aestivum.IWGSC.cdna.4D.fa
+# !data/sequences/cDNA/Triticum_aestivum.IWGSC.cdna.4D.fa
 # sequences has proteome and cDNA
 data/web_retrieved_sequences
 

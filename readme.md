@@ -49,10 +49,10 @@ The GC content of the DNA sequence is 48%.
 
 We proceed to see the length of the sequence:  
 ```bash
-$ tail -n +2 data/region8.fasta | wc -c
-14469
+$ expr $(tail -n +2 data/region8.fasta | wc -c) - $(tail -n +2 data/region8.fasta | wc -l)
+14001
 ```
-region8 is 14,469 bases long.
+region8 is 14,001 bases long.
 
 ## Region localization
 
@@ -65,6 +65,7 @@ $ samtools sort data/sequences/alignment/region8.sam \
 $ bedtools bamtobed -i data/sequences/alignment/region8_aln.bam \  
     > data/sequences/alignment/region8_aln.bed
 ```
+_We chose this mapper because it's perfect for medium length reads ranging between 100bp and megabases, in our case it's a 14kb sequence_
 
 Now we have in the output a `.bam` file and a `.bed` file. From the `.bam` file we can get the following information when running the following command:  
 ```bash
@@ -91,13 +92,25 @@ This means that the region8 is:
 * position starting from `497158670` and ending at `497172670`  
 * on the negative strand.
 
-___Reflection___: our sequence is of length 14469, and the read is 9565+1+4435=14001, which means that the alignment is almost the same length as the sequence, and the 5 mismatches are not significant. We can thus infer that region8 is well aligned to the reference genome on the negative strand of chromosome `NC_057805.1` starting at position `497158670` and ending at `497172670`. And according to the table in [^8] retrieved from RefSeq, this chromosome is the 4D chromosome of _Triticum aestivum_.
+___Reflection___: our sequence is of length 14469, and the read is 9565+1+4435=14001, which means that the alignment is EXACTLY the same length as the sequence, and the 5 mismatches are not significant relative to the number of bases. We can thus infer that region8 is well mapped to the reference genome on the negative strand of chromosome `NC_057805.1` starting at position `497158670` and ending at `497172670`. And according to the table in [^8] retrieved from RefSeq, this chromosome is the 4D chromosome of _Triticum aestivum_.
 
-![Start and End position of the alignment on the reference chromosome - RefSeq Genome Browser](./assets/region_map_refseq.png)
+![Start and End positions of the alignment on the reference genome - RefSeq Genome Browser (marker 1: start position; marker 2: end position)](./assets/region_map_refseq.png)
 
 We can visualize the `.bed` file in [Ensembl Plants, IWGSC assembly converter](https://plants.ensembl.org/Triticum_aestivum/Tools/AssemblyConverter)
 
+Moreover, this region has a GC content of 48% (as reported earlier), which is ~2% higher than the average GC content of the whole 4D chromosome (46.5%). This might indicate a high gene density in this region, as genes are known to have a higher GC content than the rest of the genome.
+
 # Gene Prediction
+
+## Tools
+
+## Visualization
+
+In order to visualize the features predicted by the abovementioned tools on artemis we first need to convert them to `.gff` format.
+
+![Predicted genes viz on Artemis](./assets/predicted_genes_artemis.png)
+
+![](image-1.png)
 
 # Gene Validation
 

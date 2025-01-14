@@ -1,27 +1,44 @@
 #!/bin/bash
 
-#!/bin/bash
-
 # Input FASTA file
 input_fasta='data/sequences/cDNA/Triticum_aestivum.IWGSC.cdna.all.fa'
 output_fasta='data/sequences/cDNA/Triticum_aestivum.IWGSC.cdna.4D.fa'
+filtered_output='data/sequences/cDNA/Triticum_aestivum.IWGSC.cdna.region8.fa'
 
-# Initialize output file
+# Start and end positions (user-defined)
+start_position=497158670
+end_position=497172670
+
 > "$output_fasta"
+> "$filtered_output"
 
-# Read the input FASTA file line by line
+# Parse input FASTA file
 while IFS= read -r line
 do
-    # Check if the line starts with a header (lines starting with '>')
+    # If it's a header line (starts with '>')
     if [[ "$line" =~ ^\> ]]; then
-        # Check if the header contains "chromosome:4D"
+        echo "Processing $line"
+        # Check if it contains 'chromosome:IWGSC:4D' (to identify relevant sequences)
         if [[ "$line" =~ chromosome:IWGSC:4D ]]; then
-            # If it matches, write the header and the following sequence
-            echo "$line" >> "$output_fasta"
-            read -r seq
-            echo "$seq" >> "$output_fasta"
+            # Extract the start and end positions from the header
+            if [[ "$line" =~ chromosome:IWGSC:4D:([0-9]+):([0-9]+) ]]; then
+                seq_start=${BASH_REMATCH[1]}
+                seq_end=${BASH_REMATCH[2]}
+
+                # Check if the sequence spans across the user-defined range
+                if (( seq_start <= end_position && seq_end >= start_position )); then
+                    echo "$line" >> "$filtered_output"
+                    read -r seq
+                    echo "$seq" >> "$filtered_output"
+                fi
+            fi
         fi
+        # Always add to the 4D file
+        echo "$line" >> "$output_fasta"
+    else
+        # Always add sequence lines to the 4D file
+        echo "$line" >> "$output_fasta"
     fi
 done < "$input_fasta"
 
-echo "Filtering complete. Results saved in $output_fasta"
+echo "Filtering complete. Results saved in $filtered_output"
