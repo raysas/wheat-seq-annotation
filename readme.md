@@ -1,12 +1,16 @@
----
+<!-- ---
 title: "M1 GENIOMHE 2024/25: Project"
 subtitle: "Structural Genomics of _Triticum aestivum_"
 author: "Group members: Aya BEN TAGHALINE, Joelle ASSY, Rayane ADAM"
----
+--- -->
+
+# Structure Genomics Project 2024/25
+
+![](./assets/wheat-genome-3green.png)
 
 
 
-# Table of contents
+## Table of contents
 
 - [Introduction](#introduction)
 - [Exploration](#exploration)
@@ -21,7 +25,7 @@ author: "Group members: Aya BEN TAGHALINE, Joelle ASSY, Rayane ADAM"
 - [Conclusion](#conclusion)
 
 
-# Introduction
+## Introduction
 
 
 _Triticum aevistum_ (commonly known as wheat), is a complex eukaryotic organism belonging to kingdom Plantae, phylum Angiosperms, class Monocots, order Poales, family Poaceae, genus Triticum. This plant has been considered as one of the most important crops in the world, providing a staple food source for billions of people as it is mainly used to make bread.   
@@ -31,7 +35,7 @@ Even though it is somehow considered a model organism in plant biology, it has a
 [^10]: Levy, Avraham A., and Moshe Feldman. "Evolution and origin of bread wheat." The Plant Cell 34.7 (2022): 2549-2567.
 
 
-![T. aestivum set of chromosomes from RefSeq](image.png)
+![T. aestivum set of chromosomes from RefSeq](assets/image.png)
 
 The goal of this project is to annotate a specific region of the genome of _Triticum aestivum_ (wheat), mainly structurally annotate, using bioinformatics tools. The region of interest is a 14,001 bp sequence (`region8`), which we will analyze to predict genes, transposable elements, and other features. This task is considerably a hard one taking into consideration this complicated genome structure from polyploidy and the richness of repetitive elements, as well as its large size.  
 In this project, we will start of by a minor exploration fo our region then we'll perform gene prediction using a variety of tools then analyze and validate these results. We will also look for transposable elements in the region and perform a final annotation of the region to conclude with this report. We have used online servers, databases, api calls, unix tools, visualization software, python & bash scripting to perform the analysis. Supplementary results, data, code, figures and documentation can be found on the github repository of this project: [github.com/raysas/wheat-seq-annotation](https://github.com/raysas/wheat-seq-annotation).
@@ -80,9 +84,9 @@ Project met:
 and additionally:  
 - [x] localized the region on the reference genome, chromosome number and strand
 
-# Exploration
+## Exploration
 
-## Sequence properties
+### Sequence properties
 
 Checking GC content in this region to have an idea about potential gene desnitites. For that we run the script:  
 
@@ -99,7 +103,7 @@ $ expr $(tail -n +2 data/region8.fasta | wc -c) - $(tail -n +2 data/region8.fast
 ```
 region8 is 14,001 bases long.
 
-## Region localization
+### Region localization
 
 Want to localize this region by mapping agaisnt the reference sequence of _Triticum aestivum_ (available on RefSeq at [GCF_018294505.1](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_018294505.1/)), which consists of $7n$ chromosomes. After retrieving the reference sequence, we perfomed mapping through Burrows-Wheeler Aligner MEM (bwa-mem) algorithm, and due to large genome size, we did this step on Galaxy because of the large computation time and memory required. 
 ```bash
@@ -137,7 +141,7 @@ This means that the region8 is:
 - position starting from `497158670` and ending at `497172670` 
 - on the negative strand.
 
-![Alignment of region8 of chromosome 4D using bam output file](image-1.png)
+![Alignment of region8 of chromosome 4D using bam output file](assets/image-1.png)
 
 ___Reflection___: our sequence is of length 14469, and the read is 9565+1+4435=14001, which means that the alignment is EXACTLY the same length as the sequence, and the 5 mismatches are not significant relative to the number of bases. We can thus infer that region8 is well mapped to the reference genome on the negative strand of chromosome `NC_057805.1` starting at position `497158670` and ending at `497172670`. And according to the table in [^8] retrieved from RefSeq, this chromosome is the 4D chromosome of _Triticum aestivum_.
 
@@ -147,11 +151,11 @@ We can visualize the `.bed` file in [Ensembl Plants, IWGSC assembly converter](h
 
 Moreover, this region has a GC content of 48% (as reported earlier), which is ~2% higher than the average GC content of the whole 4D chromosome (46.5%). This might indicate a high gene density in this region, as genes are known to have a higher GC content than the rest of the genome.
 
-# Gene Prediction
+## Gene Prediction
 
-## Tools
+### Tools
 
-### FGENESH
+#### FGENESH
 
 ![FGENESH results](./assets/FGENESH.png)
 
@@ -164,28 +168,28 @@ Gene 4, on the negative strand, spans 12512–13440 with 2 exons; the first codi
 The gene features, including exon positions and their strand orientation, suggest diverse transcriptional structures, with detailed sequences provided for both mRNA and proteins.
 
 
-### GENEID
+#### GENEID
 
 Gene 1 is located on the forward strand (+) and consists of two exons, with the first exon positioned from 6532 to 6762 and the terminal exon from 7754 to 7759. Gene 2 is also on the forward strand (+) and is a single-exon gene, extending from 10160 to 10606. 
 In contrast, Gene 3 is on the reverse strand (-) and has two exons, with the terminal exon located between 12512 and 12983, and the first exon from 13169 to 13434. The annotation reflects the strand orientation, with Gene 1 and Gene 2 being forward-strand genes, while Gene 3 is on the reverse strand, where exons are annotated in reverse order, starting from the terminal exon
 
-![geneid results](image-11.png)
+![geneid results](assets/image-11.png)
 
-### AUGUSTUS
+#### AUGUSTUS
 
-![AUGUSTUS results](image-4.png)
+![AUGUSTUS results](assets/image-4.png)
 
 The AUGUSTUS gene prediction tool (version 3.3.3) analyzed a 14,001 bp sequence using the wheat parameter set and identified two genes, one on the forward strand and one on the reverse strand. Gene 1 on the forward strand, extends  from 6226 to 10861 and contains two exons separated by an intron. The start codon is located in exon 1 (6532–6534), while the stop codon is in exon 2 (10604–10606). The coding sequence (CDS) includes two segments: 6532–6762 and 8714–10606. Gene 2, on the reverse strand, spans positions 12415–13535 and also contains two exons with an intron between them. The stop codon is in exon 1 (12512–12514), and the start codon is in exon 2 (13432–13434). The CDS includes two regions: 12512–12983 and 13169–13434. Both genes encode functional proteins. This detailed output highlights exon-intron boundaries, coding regions, and predicted protein sequences, which are valuable for downstream analyses like functional annotation and experimental validation.
 
-### DNA Subway AUGUSTUS
+#### DNA Subway AUGUSTUS
 
-![DNA subway AUGUSTUS results](image-5.png)
+![DNA subway AUGUSTUS results](assets/image-5.png)
 
 The AUGUSTUS tool identified two genes, g1 and g2, in the wheat sequence wheat_53611. Gene 1, located on the forward strand, spans positions 6532–10606 with a length of 4075 bp and a high prediction score of 0.87. It consists of four exons, with CDS regions ranging from 6532–6762, 8714–8738, 8824–8920, and 8992–10606. Gene 2, located on the reverse strand, spans positions 12512–13440 with a length of 929 bp and a prediction score of 0.54. It contains two exons, with CDS regions spanning 12512–12983 and 13169–13440. These predictions highlight the structural details of both genes, including exon-intron boundaries and coding sequences, which are critical for downstream analyses such as functional annotation and protein prediction.
 
-### DNA Subway FGENESH
+#### DNA Subway FGENESH
 
-![DNA Subway FGENESH](image-6.png)
+![DNA Subway FGENESH](assets/image-6.png)
 
 The FGENESH tool identified two genes, gf001 and gf002, in the wheat sequence wheat_53611. Gene gf001, located on the forward strand, spans positions 6532–10606 with a length of 4075 bp. It consists of two exons, the first spanning 6532–6762 (231 bp, score 21.81) and the second spanning 8714–10606 (1893 bp, score 120.25). Both exons contribute to the coding sequence (CDS). Gene gf002, located on the reverse strand, spans positions 12512–13434 with a length of 923 bp. It contains three exons: the first spans 12512–12727 (216 bp, score 9.77), the second spans 13072–13120 (49 bp, score -7.58), and the third spans 13169–13434 (266 bp, score 33.00). These detailed annotations provide insights into gene structures, exon positions, and strand orientation, making them valuable for downstream analysis and functional studies.
 
@@ -196,7 +200,7 @@ The FGENESH tool identified two genes, gf001 and gf002, in the wheat sequence wh
 | **Gene 3**    | 8741–10606 (+) (1 exon) | -                          | -                          | -                           | -                         |
 | **Gene 4**    | 12512–13440 (-) (2 exons) | -                          | -                          | -                           | 12512–13434 (-) (2 exons) |
 
-![Table with colored labels for follow up](image-7.png)
+![Table with colored labels for follow up](assets/image-7.png)
 
 **Common regions**:
 
@@ -224,9 +228,9 @@ $\iff$ These variations between the tools highlight the need for further investi
 
 
 
-# Gene Validation
+## Gene Validation
 
-## BLAST
+### BLAST
 
 We will perform a BLAST search of the predicted genes against related species proteomes locally, using blast+ package on unix terminal. 
 
@@ -238,7 +242,7 @@ Since we're blasting against local databases built from proteomes retrieved from
 
 > On another note, the advantages of blasting locally here on particular species is it's more specific and centered towards the species of interest, and provides a larger set of similar proteins in comparison to swissport for instance, which has a very limited number of reviewed proteins in each of the species we are interested in, which will be noted in the results.
 
-### Tritium aestivum proteome
+#### Tritium aestivum proteome
 
 To validate the predicted genes, we will start of by blasting against the proteome of _Triticum aestivum_ available on UniProt. We retrieved the list of proteins from the supplementary material of an International Wheat Genome Sequencing Consortium (IWGSC) published in _Science_[^5] aiming to provide an annotated reference sequence of the _Triticum aestivum_ genome. The article is available [here](https://europepmc.org/article/MED/30115783). We will access all the proteins sequences (including isoforms) using an api call to the UniProt database.
 
@@ -253,8 +257,8 @@ There is a total of 130,283 proteins in the file.
 
 We create the database locally, in `data/database`:  
 ```bash
-# --creating the local database
-# 1. Tritium_aestivum_proteome
+## --creating the local database
+## 1. Tritium_aestivum_proteome
 makeblastdb -in data/web_retrieved_sequences/proteins.fasta \
             -dbtype prot \
             -out data/database/Triticum_aestivum_proteome/Triticum_aestivum_proteome
@@ -263,7 +267,7 @@ makeblastdb -in data/web_retrieved_sequences/proteins.fasta \
 We will now perform a BLAST search against this database to see if our predicted genes are similar to any of the known annotated proteins of _Triticum aestivum_. It'll be a blastp search, as we are looking for protein sequences that are similar to our predicted sequence (which is already translated by our tools output and saved in out repository in .faa files)
 
 ```bash
-# a. on AUGUSTUS_predicted.faa output
+## a. on AUGUSTUS_predicted.faa output
 blastp -query output/AUGUSTUS/AUGUSTUS_predicted.faa \
        -db data/database/Triticum_aestivum_proteome/Triticum_aestivum_proteome \
        -out output/blast/tabulated/AUGUSTUS_Triticum_aestivum_proteome_results.txt \
@@ -286,27 +290,27 @@ We provided the commands to make blast databases and perform all the search we'v
 <!-- This is the main commands to follow, doen 3 times (for this species, and the 2 related species) for each of the predicted genes from each of the tools:  
 
 ```bash
-# --creating the local database
-# 1. Tritium_aestivum_proteome
+## --creating the local database
+## 1. Tritium_aestivum_proteome
 makeblastdb -in data/web_retrieved_sequences/proteins.fasta \
             -dbtype prot \
             -out data/database/Triticum_aestivum_proteome/Triticum_aestivum_proteome
 
-# -- blasting predicted genes against the local database
-# a. on AUGUSTUS_predicted.faa output
-#      i. tabulated output
+## -- blasting predicted genes against the local database
+## a. on AUGUSTUS_predicted.faa output
+##      i. tabulated output
 blastp -query output/AUGUSTUS/AUGUSTUS_predicted.faa \
        -db data/database/Triticum_aestivum_proteome/Triticum_aestivum_proteome \
        -out output/blast/tabulated/AUGUSTUS_Triticum_aestivum_proteome_results.txt \
        -outfmt 6 
 
-#    ii. clean tabular output and add uniprot annotation
+##    ii. clean tabular output and add uniprot annotation
 python src/clean_blast_results.py output/blast/tabulated/AUGUSTUS_Triticum_aestivum_proteome_results.txt
 ``` -->
 
 
 
-### Related species
+#### Related species
 
 Starting from the following information:  
 - _Triticum monococcum_ and _Triticum durum_ have the A and B chromosomes  
@@ -316,7 +320,7 @@ We will also look for their proteomes and perform the same blasting procedure as
 
 **N.B**: we couldn't find _Tri. monococcum_ proteome on UniProt, so we will only blast against _Tri. durum_ for the common A and B chromosomes.
 
-#### Triticum durum
+##### Triticum durum
 
 The proteome can be find on [this UniProt page](https://www.uniprot.org/uniprotkb?query=%28taxonomy_id%3A4567%29), 188,826 proteins, worth noting that only 2 of them are expertly reviewed - Swiss-Prot - the rest are unreviewed - TrEMBL.
 
@@ -327,7 +331,7 @@ $ curl https://rest.uniprot.org/uniprotkb/stream?compressed=true&format=fasta&qu
 $ gunzip data/sequences/proteome/Triticum_durum_proteins.fasta.gz
 ```
 
-#### Aegilops tauschii
+##### Aegilops tauschii
 
 The proteome can be find on [_this UniProt page_](https://www.uniprot.org/uniprotkb?query=%28taxonomy_id%3A200361%29),  214,193 proteins, only one of them is expertly reviewed.
 
@@ -338,13 +342,13 @@ $ curl https://rest.uniprot.org/uniprotkb/stream?compressed=true&format=fasta&qu
 $ gunzip data/sequences/proteome/Aegilops_tauschii_proteins.fasta.gz
 ```
 
-### Results
+#### Results
 
 In this results section we are, as explained, expecting to have for each predicted gene 3 blasting results. Since we're taking into consideration 4 genes from FGENESH and 2 from AUGUSTUS and blasting against 3 species' proteomes separately (T. aestivum, A. tauschii and T. durum), we would have 6 genes to analyse with 3 resulting blast output each.
 _BLAST results can be found by clicking on_: [this link](https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6sFI7_zIcU4x-ERs4ahNpiV46N476MYhdP2flOJrLseTCKA2K9sRKfiYyfOwCnwzBz5Mdh5RYgJHr/pubhtml)  
 _In the first reported blast we will analyse every single detail extensively to give an intuition of our analysis_
 
-#### **Augustus gene 1**: (_protein length: 707aa_)  
+##### **Augustus gene 1**: (_protein length: 707aa_)  
 
 
 In the first BLAST results for AUGUSTUS against our own species's proteome _Triticum aestivum_:  
@@ -417,7 +421,7 @@ On a side note:
 
 All these blast results show that indeed this gene1 is highly likely to be associated with the _Anaphase-promoting complex subunit 11_ protein, belonging to the 4D chromosome of our species, and there exist general agreement of the use of is full length (707aa) and is associated with a zinc-finger motif along with metal-binding activity (zinc most probably), with 100% match to the same protein product from our own species. We shall see other results to see the validity of our assumptions
 
-#### **Augustus gene 2**: (_protein length: 245aa_)  
+##### **Augustus gene 2**: (_protein length: 245aa_)  
 
 
 _Against Triticum aestivum proteome_
@@ -439,11 +443,11 @@ Same results almost, same positions are aligned (1-245), same functional annotat
 
 _Thus the 2nd prediction of AUGUSTUS is also highly likely to be validated, with provided proof on conservative 245 residues involved in dna binding activity_
 
-#### **Fgenesh gene 1 & 2**  
+##### **Fgenesh gene 1 & 2**  
 
 Show absolutely no significant results in each of the species, one of them no hits at all, those that have have a higher proportion mismatches than matches, high e value and % id <40. Thus no validation of these gene structures predicted by Fgenesh
 
-#### **Fgenesh gene 3** (length: 621aa)  
+##### **Fgenesh gene 3** (length: 621aa)  
 
 This one provides interestingly similar results that also enforce our previously established hypothesis in the first Augustus gene:
 
@@ -470,7 +474,7 @@ As previously stated from gene prediction results, these 2 predicted genes might
 we can notice that August's prediction match the 1-707 of subject while Fgenesh start at either 67 or 76th residue of the subject, both matching the length of the predicted genes length (707 vs 621 residues), we can comment that Fgensh has a truncated prediction at the 5' UTR which is supposed to be part of the product.
 (We can say that the 621 aa residues have been well predicted in the coding region, there might be a truncated chunk at the beginning of the protein as predicted by Fgenesh as the matches are late to start on subject proteins and when put in comparison with the length and alignment of Augustus's)
 
-### **Fgenesh gene 4** (length: 247aa)  
+#### **Fgenesh gene 4** (length: 247aa)  
 
 Finally, we have here in _Triticum aestivum_ proteome, 3 hits with 100% id, 247 residues of the query matching the same length of the subject, all of them are _Uncharacterized protein_ but with same identifiers involved with ECO and such (also identifiers relatd to DNA-binding) with the same functional annotation, the 100% match is with subject on 4D the other 2 are respectively 4B and 5A which are closest to 4D in position, with the same exact alignment pattern, no mismatches, no gaps, and the same exact length of the protein.
 
@@ -478,7 +482,7 @@ Finally, we have here in _Triticum aestivum_ proteome, 3 hits with 100% id, 247 
 
 Worth noting this matches with subject protein's length and further validates Augustus results, but even better with the 2 first missing residues that we have mentioned before present here, thus highly suggesting the presence of a coding region here.
 
-## Transcriptome 
+### Transcriptome 
 
 _Testing if we can find any transcriptome data_
 
@@ -498,23 +502,23 @@ _trying to perform RNA-seq aln and viz using IGB, no reads show_
 
 We also tried performing mapping through RNA Star, which is a splice aware and fast performing aligner, but the results were not satisfactory, also no reads were shown in the region of interest.
 
-![Tophat2 resulting bam file viz: no reads are shown in our region](image-17.png)
+![Tophat2 resulting bam file viz: no reads are shown in our region](assets/image-17.png)
 
 After all, we have used over 80GB of memory for over 60 hours of computing on Galaxy server, we were in fact no longer able to proceed with RNAseq analysis.
 
 On the other hand we found this on NCBI, when we mapped our region to its coordinates on the reference of chromosome 4D, and we found the following:
 
-![region8 marked on chr 4D with RNAseq density, NCBI GDV](image-12.png)
+![region8 marked on chr 4D with RNAseq density, NCBI GDV](assets/image-12.png)
 
-![region8 marked on chr 4D with XM_044522475.1 transcript showing, NCBI GDV](image-16.png)
+![region8 marked on chr 4D with XM_044522475.1 transcript showing, NCBI GDV](assets/image-16.png)
 
 One transcript was shown with some exon RNAseq exon density in the region, providing some hope that this region can actually contain a gene, even though the transcript does not map exact locations that we have. But overall, this is a good sign that the region is transcribed and can contain a gene (or more).
 
-<!-- ![](image-13.png) -->
+<!-- ![](assets/image-13.png) -->
 
 <!-- | | | 
 |-|-|
-|![](image-14.png) |![](image-13.png) | -->
+|![](assets/image-14.png) |![](assets/image-13.png) | -->
 
 
 _Another trial_:
@@ -533,7 +537,7 @@ Also showing an output out of the studied region, even though none of them direc
 
 > We tried looking for ESTs too but couln't find, however we did not try as extensively as RNA this is why it's not mentioned
 
-# Transposable Elements (TEs) 
+## Transposable Elements (TEs) 
 
 To detect transposable elements (TEs) in the genomic region of *Triticum aestivum* (wheat), we used the following tools:
 
@@ -541,13 +545,13 @@ To detect transposable elements (TEs) in the genomic region of *Triticum aestivu
 - Censor from Genetic Information Research Institute (GIRI) website, considering first the Triticum genus and then the Viridiplantae.
 - RepeatMasker included in DNA Subway.
 
-## RepeatMasker
+### RepeatMasker
 
 [RepeatMasker Website](https://www.repeatmasker.org/RepeatMasker/)
 
 RepeatMasker is a program that screens DNA sequences for interspersed repeats and low complexity DNA sequences. It can be used to identify transposable elements (TEs) in genomic sequences.
 
-### Prerequisites
+#### Prerequisites
 
 1. **Perl**:
 
@@ -604,7 +608,7 @@ RepeatMasker is a program that screens DNA sequences for interspersed repeats an
 
 ---
 
-### Installation
+#### Installation
 
 1. **Download RepeatMasker**:  
 
@@ -665,7 +669,7 @@ RepeatMasker is a program that screens DNA sequences for interspersed repeats an
 
 ---
 
-### Usage
+#### Usage
 
 1. **RepeatMasker with Triticum sequences from TREP database:** 
 
@@ -680,7 +684,7 @@ RepeatMasker is a program that screens DNA sequences for interspersed repeats an
 
     The output file region8.fasta.txt.out contains the following information:
 
-    ![output](image-19.png)
+    ![output](assets/image-19.png)
 
     - **SW score**: Smith-Waterman score.
     - **perc div.**: Percentage of substitutions in the alignment.
@@ -703,10 +707,10 @@ RepeatMasker is a program that screens DNA sequences for interspersed repeats an
 
     The output file region8.fasta.txt.out:
 
-![output](image-18.png)
+![output](assets/image-18.png)
 
 
-## Censor
+### Censor
 
 [Censor website](https://www.girinst.org/censor/index.php)
 
@@ -764,7 +768,7 @@ Censor is a tool provided by the Genetic Information Research Institute (GIRI) t
     Looking at the results, they are more fragmented and have relatively low similarity scores, except for the ones already identified previously.So we will not consider this output.
 
 
-## RepeatMasker in DNA Subway
+### RepeatMasker in DNA Subway
 
 [DNA Subway Website](https://dnasubway.cyverse.org/)
 
@@ -772,11 +776,11 @@ DNA Subway is a bioinformatics platform that provides a suite of tools for analy
 
 The output table:
 
-![](image-20.png)
+![](assets/image-20.png)
 
 _check them in output/ directory in github for reference_
 
-## Interpretation
+### Interpretation
 
 A nice way to visualize the results and the difference between the tools 
 
@@ -811,7 +815,7 @@ So, in conclusion, we can rely on the TEs identified by Censor using only Tritic
 
 
 
-# Final annotation
+## Final annotation
 
 Gene 1 of Augustus (predicted protein) which has a length of 707aa has shown to perfectly align with a subject of the protein **"Anaphase-promoting complex subunit 11"** which also has the same length, so this is our first final annotated gene, with positions as reported by AUGUSTUS:
 
@@ -835,11 +839,11 @@ _What's Anaphase-promoting complex subunit 11?_
 **keywords:** _Metal-binding, Zinc, Zing-finger, Anaphase-promoting complex subunit 11, RING_  
 This is an unreviewed protein annotation (TrEMBL) with score 1/5, no structure has been experimentally determined which weaken its annotation status. 
 
-![Anaphase-promoting complex subunit 11 predicted structure from AlphaFold](image-8.png)
+![Anaphase-promoting complex subunit 11 predicted structure from AlphaFold](assets/image-8.png)
 
 It has a RING type and VWFA domains, 2 exons protein, and it has an 670 aa isoform (which explains hits of this length and possibly FGENESH's shorter prediction)
 
-![Ring type domain which matches with the A. tauschii previously discussed hit](image-9.png)
+![Ring type domain which matches with the A. tauschii previously discussed hit](assets/image-9.png)
 
 Gene 2 that we conclude is from FGENESH's gene4: **"Uncharacterized protein"** with a length of 247aa, has shown to align with a subject of the protein **"Uncharacterized protein"** which also has the same length, so this is our second final annotated gene, AUGUSTUS matched the last 245 aa of this protein. Positions as per FGENESH:  
 
@@ -856,7 +860,7 @@ Getting back to this entry from it uniprot id, we notice it's involved in transc
 
 
 
-![Uncharacterized protein predicted structure from AlphaFold](image-10.png)
+![Uncharacterized protein predicted structure from AlphaFold](assets/image-10.png)
 
 
 The final genes in `.fasta`:  
@@ -885,7 +889,7 @@ GGDSGEY
 
 in `.gff3`:
 ```text
-##gff-version 3 format
+###gff-version 3 format
 region8	AUGUSTUS	gene	6226	10861	0.03	+	.	ID=gene1
 region8	AUGUSTUS	mRNA	6226	10861	0.03	+	.	ID=gene1.t1;Parent=gene1
 region8	AUGUSTUS	exon	6226	6762	.	+	.	ID=gene1.exon1;Parent=gene1.t1
@@ -905,19 +909,19 @@ region8	FGENESH	CDS	13169	13440	116.90	-	0	ID=gene2.cds2;Parent=gene2.t1
 Running viz on artemis: 
 
 ```bash
-# we installed artemis as mentioned in file utils/tools_installation.sh on github
+## we installed artemis as mentioned in file utils/tools_installation.sh on github
 tools/artemis/art data/region8
-# then add output/gene_final_annotation.gff
-# all these files can be found on the github repo
+## then add output/gene_final_annotation.gff
+## all these files can be found on the github repo
 ```
 
 
 ![Final annotated and validated genes on artemis](assets/genes_artemis.png)
 
 
-![Final annotation of genes and TEs in white](image-15.png)
+![Final annotation of genes and TEs in white](assets/image-15.png)
 
-# Supplementary
+## Supplementary
 
 
 - Whole Genome (all 7n chr) of _triticum aestivum_ on ENSEMBL : [https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-60/gff3/triticum_aestivum/](https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-60/gff3/triticum_aestivum/  )  
