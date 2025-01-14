@@ -643,13 +643,16 @@ RepeatMasker is a program that screens DNA sequences for interspersed repeats an
     1. **Triticum sequences**  
         This database contains sequences specific to *Triticum* genus.
         ```bash
-        sudo wget https://trep-db.uzh.ch/blast/dir_download/sequences.zip -P /usr/local/RepeatMasker/Libraries/
+        sudo wget https://trep-db.uzh.ch/blast/dir_download/sequences.zip -P \
+        /usr/local/RepeatMasker/Libraries/
         ```
 
     2. **Complete TREP nucleotide sequence database (4,162 sequences)**  
         This database includes all TE entries for detailed analysis.
         ```bash
-        sudo wget https://trep-db.uzh.ch/downloads/trep-db_complete_Rel-19.fasta.gz -P /usr/local/RepeatMasker/Libraries/
+        sudo wget \
+        https://trep-db.uzh.ch/downloads/trep-db_complete_Rel-19.fasta.gz \
+        -P /usr/local/RepeatMasker/Libraries/
         ```
 
     To extract the files:
@@ -769,17 +772,7 @@ DNA Subway is a bioinformatics platform that provides a suite of tools for analy
 
 The output table:
 
-| **Seqid**       | **Source**     | **Type**        | **Length** | **Start** | **End** | **Score** | **Strand** | **Phase**                                                        |
-|-----------------|----------------|-----------------|------------|-----------|---------|-----------|------------|-----------|
-| wheat_53611     | RepeatMasker   | repeat_region   | 1169       | 130       | 1298    | .         | +          | .         | 
-| wheat_53611     | RepeatMasker   | repeat_region   | 280        | 1299      | 1578    | .         | +          | .         | 
-| wheat_53611     | RepeatMasker   | repeat_region   | 97         | 3736      | 3832    | .         | -          | .         | 
-| wheat_53611     | RepeatMasker   | repeat_region   | 24         | 4919      | 4942    | .         | +          | .         |
-| wheat_53611     | RepeatMasker   | repeat_region   | 904        | 5027      | 5930    | .         | -          | .         | 
-| wheat_53611     | RepeatMasker   | repeat_region   | 33         | 6488      | 6520    | .         | +          | .         | 
-| wheat_53611     | RepeatMasker   | repeat_region   | 24         | 6618      | 6641    | .         | +          | .         | 
-| wheat_53611     | RepeatMasker   | repeat_region   | 101        | 7432      | 7532    | .         | +          | .         | 
-| wheat_53611     | RepeatMasker   | repeat_region   | 136        | 12743     | 12878   | .         | +          | .         |
+![](image-20.png)
 
 _check them in output/ directory in github for reference_
 
