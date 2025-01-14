@@ -52,7 +52,7 @@ _Tools, databases and utils used in this project are listed in the following tab
 | Censor                  | Webserver          | Annotate TEs                                                                           |
 | DNASubway               | Webserver          | Annotation pipeline to verify results                                                  |
 | ENA database            | Database   | Retrieve TSA information and study data                                                |
-| RefSeq genome browser  | website | Visualize mapped regions on chromosomes                                                |
+| Genome Data Viewer  | website | Visualize mapped regions on chromosomes                                                |
 | ENSEMBL Plants          | Database  | Reference sequence and cDNA (transcripts) of the wheat genome                          |
 | FastqGroomer            | Galaxy             | Standardize FASTQ format for mapping                                                  |
 | FastQC                  | Galaxy             | Check transcriptome quality                                                            |
@@ -65,6 +65,8 @@ _Tools, databases and utils used in this project are listed in the following tab
 | RNAStar                 | Galaxy             | Splice-aware RNA-seq mapper                                                            |
 | SAMtools                | Unix tool          | Manipulate SAM and BAM files                                                           |
 | Trep                    | Database        | TE database to run RepeatMasker locally                                                              |
+| NCBI SRA | Database | Download RNA-seq raw fastq data |
+| NCBI Nucleotide | Database | Sequence database |
 | Uniprot                 | Database           | Retrieve species proteome   |  
 | FastQC      | Galaxy      | Check transcriptome quality     |
 | FastqGroomer| Galaxy      | Standardize FASTQ format        |
@@ -487,19 +489,8 @@ The [_European Nucleotide Archive (ENA)_](https://www.ebi.ac.uk/ena/browser/home
 _TSA stands for Transcriptome Shotgun Assembly_
 
 One of them is published by [Xiao et al. (2013) in BMC Genomics](https://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-14-197) [^4]. They have performed short read RNA-seq using Illumina Hi-Seq tech, and deposited the project's raw reads on the SRA database, project [`SRX212270`](https://www.ncbi.nlm.nih.gov/sra/?term=SRX212270). We will use this as trial to explore how we can validate using Whole Transcriptomes before optimizing our choice. 
-
-### Trial 1: blasting against transcriptome 
-
-As a first attempt, due to the high memory requirement (_e.g.,_ one of them is 15GB of reads), we have tried performing BLAST on ncbi's server against this whole transcriptome in [^2], with default parameters (can perform it [here](https://blast.ncbi.nlm.nih.gov/blast/Blast.cgi?PROGRAM=blastn&BLAST_PROGRAMS=megaBlast&PAGE_TYPE=BlastSearch&BLAST_SPEC=SRA&DB_GROUP=Exp&NUM_ORG=1&EQ_MENU=SRX212270) by just adding the [region8 fasta file](./data/region8.fasta)). The default search gave no significant results, we will try to relax the paramters (BLOSUM45 and lowering penalties, accepting lower thresholds...)
-
-
-
-### Trial 2: downloading the WTS data
-
-We will try downloading the reads of [^2] to see how to manipulate such a large file. Since it surpasses the threshold to download a file from SRA webserver (which is 5GB), we will download it using [`sra-toolkit`]().  
 While running out of time and memory, we will try doing that using Galaxy[^3][^4].
 
-### Trial 3: Analysis
 
 Working on galaxy, first retrieve the SRA accession number from the project, tools > Get data > EBI SRA, copy the accession number and get the fastq in galaxy. After loading them (paired end so 2 fastq) > fastq groomer, to make sure the fastq format fits Galaxy's requirement and make it run. Meanwhile > FastQC to make sure the quality of the transcriptome is good or whether it's better to take another set of reads.
 
@@ -508,6 +499,15 @@ We will try now mapping: using Tophat2, we will map the reads to the reference g
 ### Trial 4: visualization
 
 _trying to perform RNA-seq aln and viz using IGB_  
+
+![region8 marked on chr 4D with XM_044522475.1 transcript showing, NCBI GDV](image-12.png)
+
+<!-- ![](image-13.png) -->
+
+<!-- | | | 
+|-|-|
+|![](image-14.png) |![](image-13.png) | -->
+
 
 ### cDNA
 
@@ -621,7 +621,10 @@ tools/artemis/art data/region8
 ```
 
 
-![final annotated and validated genes on artemis](assets/genes_artemis.png)
+![Final annotated and validated genes on artemis](assets/genes_artemis.png)
+
+
+![Final annotation of genes and TEs in white](image-15.png)
 
 # Supplementary
 
