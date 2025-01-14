@@ -1,0 +1,9 @@
+##gff-version 3
+CENSORR_triticum	.	T_Interspersed_Repeat	63	1298	0.7216	+	.	Name=Copia-82_TAe-I;From=4536;To=5877;Sim=0.7216;Pos_Mm_Ts=1.7181;Score=726
+CENSORR_triticum	.	T_Interspersed_Repeat	1299	1560	0.7665	+	.	Name=Copia-82_TAe-LTR;From=1;To=254;Sim=0.7665;Pos_Mm_Ts=1.8333;Score=266
+CENSORR_triticum	.	T_Interspersed_Repeat	3293	3329	0.8649	-	.	Name=Mariner-N15_TAe;From=38;To=73;Sim=0.8649;Pos_Mm_Ts=2.0000;Score=72
+CENSORR_triticum	.	T_Interspersed_Repeat	3738	3830	0.8925	-	.	Name=HADES_TA;From=1;To=93;Sim=0.8925;Pos_Mm_Ts=1.4286;Score=208
+CENSORR_triticum	.	T_Interspersed_Repeat	4120	4149	0.9333	-	.	Name=EnSpm-5n_TAe;From=9611;To=9640;Sim=0.9333;Pos_Mm_Ts=99.0000;Score=76
+CENSORR_triticum	.	T_Interspersed_Repeat	4972	5930	0.7612	-	.	Name=HARB-11_TAe;From=873;To=1826;Sim=0.7612;Pos_Mm_Ts=1.8661;Score=1186
+CENSORR_triticum	.	T_Interspersed_Repeat	7432	7529	0.9694	+	.	Name=Mariner-N8_TAe;From=5;To=102;Sim=0.9694;Pos_Mm_Ts=1.0000;Score=272
+CENSORR_triticum	.	T_Interspersed_Repeat	8087	8143	0.8136	+	.	Name=L1-169_TAe;From=7232;To=7294;Sim=0.8136;Pos_Mm_Ts=2.2500;Score=86

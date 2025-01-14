@@ -1,0 +1,13 @@
+##gff-version 3
+complete_trep_region8	RepeatMasker	complete_trep_repeat_region	129	533	.	+	.	ID=RepeatMasker1;Name=RepeatMasker1-RLC_Taes_Ida_EF540321-1;description=Unspecified 3537 3964 (126) score:406
+complete_trep_region8	RepeatMasker	complete_trep_repeat_region	2655	2671	.	+	.	ID=RepeatMasker2;Name=RepeatMasker2-Simple_repeat;description=(T)n 1 17 (0) score:16
+complete_trep_region8	RepeatMasker	complete_trep_repeat_region	3291	3316	.	+	.	ID=RepeatMasker3;Name=RepeatMasker3-DTT_Taes_SBB_42j2-2;description=Unspecified 9 34 (51) score:229
+complete_trep_region8	RepeatMasker	complete_trep_repeat_region	3736	3832	.	+	.	ID=RepeatMasker4;Name=RepeatMasker4-DTT_Taes_Hades_42j2-4;description=Unspecified 1 97 (0) score:811
+complete_trep_region8	RepeatMasker	complete_trep_repeat_region	5201	5809	.	C	.	ID=RepeatMasker5;Name=RepeatMasker5-DTH_Taes_Rong_AY951945-1;description=Unspecified (702) 1716 1111 score:1032
+complete_trep_region8	RepeatMasker	complete_trep_repeat_region	5333	5915	.	C	.	ID=RepeatMasker6;Name=RepeatMasker6-DTH_Tmon_unnamed_AY914080-1;description=Unspecified (7) 1243 660 score:1060
+complete_trep_region8	RepeatMasker	complete_trep_repeat_region	6393	6426	.	+	.	ID=RepeatMasker7;Name=RepeatMasker7-Simple_repeat;description=(CTCC)n 1 36 (0) score:14
+complete_trep_region8	RepeatMasker	complete_trep_repeat_region	6488	6520	.	+	.	ID=RepeatMasker8;Name=RepeatMasker8-Simple_repeat;description=(GGGTC)n 1 33 (0) score:18
+complete_trep_region8	RepeatMasker	complete_trep_repeat_region	6618	6639	.	+	.	ID=RepeatMasker9;Name=RepeatMasker9-Simple_repeat;description=(CGC)n 1 23 (0) score:15
+complete_trep_region8	RepeatMasker	complete_trep_repeat_region	7432	7529	.	+	.	ID=RepeatMasker10;Name=RepeatMasker10-DTT_Taes_Icarus_BJ274200-1;description=Unspecified 5 102 (1) score:827
+complete_trep_region8	RepeatMasker	complete_trep_repeat_region	12248	12283	.	+	.	ID=RepeatMasker11;Name=RepeatMasker11-Simple_repeat;description=(TGGTCA)n 1 33 (0) score:13
+complete_trep_region8	RepeatMasker	complete_trep_repeat_region	12329	12355	.	+	.	ID=RepeatMasker12;Name=RepeatMasker12-Simple_repeat;description=(GCAT)n 1 29 (0) score:12

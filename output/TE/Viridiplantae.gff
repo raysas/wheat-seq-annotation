@@ -1,0 +1,22 @@
+##gff-version 3
+region8	.	V_Interspersed_Repeat	63	118	0.7719	-	.	Name=Copia-35_Sit-I;From=4227;To=4283;Sim=1.3333;Pos/Mm:Ts=76
+region8	.	V_Interspersed_Repeat	129	1298	0.8509	-	.	Name=IKEROS_HV_I;From=5839;To=6933;Sim=1.4681;Pos/Mm:Ts=1928
+region8	.	V_Interspersed_Repeat	1299	1537	0.8770	-	.	Name=IKEROS_HV_LTR;From=1;To=241;Sim=1.4667;Pos/Mm:Ts=498
+region8	.	V_Interspersed_Repeat	1627	1700	0.7632	-	.	Name=Gypsy-1_Mac-I;From=1538;To=1614;Sim=3.0000;Pos/Mm:Ts=74
+region8	.	V_Interspersed_Repeat	1784	1960	0.6871	+	.	Name=HARB-18_TAe;From=1;To=167;Sim=1.9167;Pos/Mm:Ts=70
+region8	.	V_Interspersed_Repeat	3293	3329	0.8649	+	.	Name=Mariner-N15_TAe;From=38;To=73;Sim=2.0000;Pos/Mm:Ts=72
+region8	.	V_Interspersed_Repeat	3738	3830	0.8925	+	.	Name=HADES_TA;From=1;To=93;Sim=1.4286;Pos/Mm:Ts=208
+region8	.	V_Interspersed_Repeat	3912	3973	0.8246	+	.	Name=SHACOP16_LTR_MT;From=306;To=358;Sim=4.0000;Pos/Mm:Ts=68
+region8	.	V_Interspersed_Repeat	4124	4176	0.8214	+	.	Name=hAT-N43B_OS;From=2228;To=2283;Sim=5.0000;Pos/Mm:Ts=78
+region8	.	V_Interspersed_Repeat	4354	4431	0.7778	+	.	Name=MuDR-19_Cas;From=8016;To=8104;Sim=2.7500;Pos/Mm:Ts=72
+region8	.	V_Interspersed_Repeat	4972	5930	0.7612	+	.	Name=HARB-11_TAe;From=873;To=1826;Sim=1.8661;Pos/Mm:Ts=1186
+region8	.	V_Interspersed_Repeat	6496	6554	0.7797	+	.	Name=L1-331_TAe;From=2289;To=2344;Sim=2.0000;Pos/Mm:Ts=76
+region8	.	V_Interspersed_Repeat	7432	7529	0.9694	-	.	Name=Mariner-N8_TAe;From=5;To=102;Sim=1.0000;Pos/Mm:Ts=272
+region8	.	V_Interspersed_Repeat	8104	8143	0.9286	+	.	Name=Sce_Abermu;From=6299;To=6344;Sim=99.0000;Pos/Mm:Ts=90
+region8	.	V_Interspersed_Repeat	9663	9802	0.7429	-	.	Name=MuDR-N111_OS;From=538;To=677;Sim=1.4762;Pos/Mm:Ts=142
+region8	.	V_Interspersed_Repeat	11206	11243	0.8605	+	.	Name=DNA9-31B_OS;From=129;To=173;Sim=1.0000;Pos/Mm:Ts=68
+region8	.	V_Interspersed_Repeat	12189	12242	0.8214	-	.	Name=Helitron-10_MT;From=2574;To=2629;Sim=5.0000;Pos/Mm:Ts=76
+region8	.	V_Interspersed_Repeat	12527	12635	0.8020	-	.	Name=Helitron-N12C_OS;From=400;To=499;Sim=4.0000;Pos/Mm:Ts=88
+region8	.	V_Interspersed_Repeat	12793	12877	0.7978	-	.	Name=HARB-1_SHS;From=2792;To=2889;Sim=3.0000;Pos/Mm:Ts=100
+region8	.	V_Interspersed_Repeat	12905	12985	0.7407	-	.	Name=Rep-1_AT;From=35;To=115;Sim=1.9091;Pos/Mm:Ts=96
+region8	.	V_Interspersed_Repeat	13163	13318	0.7516	+	.	Name=MuDR-N118_OS;From=519;To=674;Sim=4.1111;Pos/Mm:Ts=192
