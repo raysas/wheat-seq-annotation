@@ -131,32 +131,6 @@ The gene features, including exon positions and their strand orientation, sugges
 
 ### GENEID
 
-![GENEID results](image-3.png)
-
-**Gene 1 (Forward Strand):**
-- **Number of Exons**: 2
-- **Positions**:
-  - First Exon: 6532 to 6762
-  - Terminal Exon: 7754 to 7759
-- **Strand**: Forward (+)
-
-**Gene 2 (Forward Strand):**
-- **Number of Exons**: 1 (Single exon)
-- **Positions**:
-  - Single Exon: 10160 to 10606
-- **Strand**: Forward (+)
-
-**Gene 3 (Reverse Strand):**
-- **Number of Exons**: 2
-- **Positions**:
-  - Terminal Exon: 12512 to 12983
-  - First Exon: 13169 to 13434
-- **Strand**: Reverse (-)
-
-**This means:**
-- $\iff$ Gene 1 and Gene 2 are on the forward strand (+).
-- $\iff$ Gene 3 is on the reverse strand (-), and its exons are annotated starting from the terminal exon to the first exon since it is reverse.
-
 Gene 1 is located on the forward strand (+) and consists of two exons, with the first exon positioned from 6532 to 6762 and the terminal exon from 7754 to 7759. Gene 2 is also on the forward strand (+) and is a single-exon gene, extending from 10160 to 10606. 
 In contrast, Gene 3 is on the reverse strand (-) and has two exons, with the terminal exon located between 12512 and 12983, and the first exon from 13169 to 13434. The annotation reflects the strand orientation, with Gene 1 and Gene 2 being forward-strand genes, while Gene 3 is on the reverse strand, where exons are annotated in reverse order, starting from the terminal exon
 
