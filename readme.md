@@ -16,37 +16,30 @@ author: "Group members:"
   - [Region localization](#region-localization)
 - [Gene Prediction](#gene-prediction)
     - [Tools](#tools)
-        - [FGENESH](#fgenesh)
-        - [GENEID](#geneid)
-        - [AUGUSTUS](#augustus)
     - [Visualization](#visualization)
 - [Gene Validation](#gene-validation)
     - [BLAST](#blast)
-        - [Tritium aestivum proteome](#tritium-aestivum-proteome)
-        - [Related species](#related-species)
-            - [Triticum durum](#triticum-durum)
-            - [Aegilops tauschii](#aegilops-tauschii)
     - [Transcriptome](#transcriptome)
-        - [Trial 1: blasting against transcriptome](#trial-1-blasting-against-transcriptome)
-        - [Trial 2: downloading the WTS data](#trial-2-downloading-the-wts-data)
-        - [Trial 3: Analysis](#trial-3-analysis)
-        - [Trial 4: visualization](#trial-4-visualization)
-    - [cDNA](#cdna)
 - [Transposable Elements (TEs)](#transposable-elements-tes)
 - [Final annotation](#final-annotation)
 - [Supplementary](#supplementary)
 
-_this project can be found on github at [github.com/raysas/wheat-seq-annotation](https://github.com/raysas/wheat-seq-annotation) where all files including code, data, figures, results and documentation can be found for your reference_
 
-## Introduction
+# Introduction
 
 _Introduction on the species, structural genomics and goal of this project, then discuss potential issues that might arise due to complexity. Proceed by summarizing the desired workflow highlighting the criteria demanded by the instructor to be fulfilled_
 
 _Triticum aevistum_ (commonly known as wheat), is a complex eukaryotic organism belonging to kingdom Plantae, phylum Angiosperms, class Monocots, order Poales, family Poaceae, genus Triticum. This plant has been considered as one of the most important crops in the world, providing a staple food source for billions of people as it is mainly used to make bread.   
 
-Even though it is somehow considered a model organism in plant biology, it has a complex genome structure that makes it difficult to study. It is a hexaploid species with a large genome, consisting of 7n chromosomes. The genome is highly complex due to its polyploid nature, with three subgenomes (A, B, and D) derived from three ancestral species. The A and B chromosomes are derived from _Triticum monococcum_ and _Triticum durum_, while the D chromosome is derived from _Aegilops tauschii_. The genome is characterized by a high gene density, with a large number of protein-coding genes, non-coding RNAs, and transposable elements (TEs). 
+Even though it is somehow considered a model organism in plant biology, it has a complex genome structure that makes it difficult to study. It is a hexaploid species with a large genome, consisting of 7n chromosomes. This polyploidy is in fact derived from the hybridization of three different species due to an evolutionary event that occurred around 8,500–9,000 years ago. It comes from a tetraploid species having BBAA chromosomes and a diploid species having DD chromosomes. The tetraploid species is believed to be a free-threshing species and can be thought to be _Triticum monococcum_ or _Triticum durum_, whereas the diploid species is _Aegilops tauschii_. Ending up with a hexaploid species with BBAADD chromosomes.[^10]
 
-![T. aestivum set of chromosomes](image.png)
+[^10]: Levy, Avraham A., and Moshe Feldman. "Evolution and origin of bread wheat." The Plant Cell 34.7 (2022): 2549-2567.
+
+
+![T. aestivum set of chromosomes from RefSeq](image.png)
+
+The goal of this project is to annotate a specific region of the genome of _Triticum aestivum_ (wheat), mainly structurally annotate, using bioinformatics tools. The region of interest is a 14,001 bp sequence (`region8`), which we will analyze to predict genes, transposable elements, and other features. This task is considerably a hard one taking into consideration this complicated genome structure from polyploidy and the richness of repetitive elements, as well as its large size.  
+In this project, we will start of by a minor exploration fo our region then we'll perform gene prediction using a variety of tools then analyze and validate these results. We will also look for transposable elements in the region and perform a final annotation of the region to conclude with this report. We have used online servers, databases, api calls, unix tools, visualization software, python & bash scripting to perform the analysis. Supplementary results, data, code, figures and documentation can be found on the github repository of this project: [github.com/raysas/wheat-seq-annotation](https://github.com/raysas/wheat-seq-annotation).
 
 # Exploration
 
@@ -91,9 +84,9 @@ region8 16      NC_057805.1     497158671       60      9565M1I4435M    *       
 
 From the `.bam` output we can see[^6]: 
 
-* The CIGAR string `9565M1I4435M`, means that the read is 9565 bases long, then there is an insertion of 1 base, and then 4435 more bases.  
-* The `NM:i:5` field indicates that there are 5 mismatches in the alignment.  
-* The `MD:Z:9565A1651C131G821T1828` field indicates the mismatches in the alignment. 
+- The CIGAR string `9565M1I4435M`, means that the read is 9565 bases long, then there is an insertion of 1 base, and then 4435 more bases.
+- The `NM:i:5` field indicates that there are 5 mismatches in the alignment.
+- The `MD:Z:9565A1651C131G821T1828` field indicates the mismatches in the alignment. 
 
 If we further proceed conversion onto a `.bed` file, we get the following info:  
 ```text
@@ -101,9 +94,9 @@ NC_057805.1	497158670	497172670	region8	60	-
 ```
 This means that the region8 is:  
 
-* located on the chromosome `NC_057805.1`  
-* position starting from `497158670` and ending at `497172670`  
-* on the negative strand.
+- located on the chromosome `NC_057805.1`
+- position starting from `497158670` and ending at `497172670` 
+- on the negative strand.
 
 ___Reflection___: our sequence is of length 14469, and the read is 9565+1+4435=14001, which means that the alignment is EXACTLY the same length as the sequence, and the 5 mismatches are not significant relative to the number of bases. We can thus infer that region8 is well mapped to the reference genome on the negative strand of chromosome `NC_057805.1` starting at position `497158670` and ending at `497172670`. And according to the table in [^8] retrieved from RefSeq, this chromosome is the 4D chromosome of _Triticum aestivum_.
 
@@ -157,8 +150,8 @@ The FGENESH tool identified two genes, gf001 and gf002, in the wheat sequence wh
 
 | Gene Position | Fgenesh (exons)         | DNA Subway Fgenesh (exons) | Augustus (exons)           | DNA Subway Augustus (exons) | Geneid (exons)            |
 |---------------|-------------------------|----------------------------|----------------------------|-----------------------------|---------------------------|
-| **Gene 1**    | 1301–3168 (-) (7 exons) | 6532–10606 (+) (2 exons)   | 6226–10861 (+) (2 exons)   | 6532–10606 (+) (4 exons)    | 6532–7759 (+) (2 exons); 10160–10606 (+) (1 exon)   |
-| **Gene 2**    | 5715–6797 (-) (2 exons) | 12512–13434 (-) (3 exons)  | 12415–13535 (-) (2 exons)  | 12512–13440 (-) (2 exons)   | -  |
+| **Gene 1**    | 1301–3168 (-) (7 exons) | 6532–10606 (+) (2 exons)   | 6226–10861 (+) (2 exons)   | 6532–10606 (+) (4 exons)    | 6532–7759 (+) (2 exons)   |
+| **Gene 2**    | 5715–6797 (-) (2 exons) | 12512–13434 (-) (3 exons)  | 12415–13535 (-) (2 exons)  | 12512–13440 (-) (2 exons)   | 10160–10606 (+) (1 exon)  |
 | **Gene 3**    | 8741–10606 (+) (1 exon) | -                          | -                          | -                           | -                         |
 | **Gene 4**    | 12512–13440 (-) (2 exons) | -                          | -                          | -                           | 12512–13434 (-) (2 exons) |
 
@@ -226,8 +219,8 @@ We provided the commands to make blast databases and perform the search in the `
 ### Related species
 
 Starting from the following information:  
-* _Triticum monococcum_ and _Triticum durum_ have the A and B chromosomes  
-* _Aegilops tauschii_ has the D chromosome
+- _Triticum monococcum_ and _Triticum durum_ have the A and B chromosomes  
+- _Aegilops tauschii_ has the D chromosome
 
 We will also look for their proteomes and perform the same blasting procedure as above.  
 
@@ -254,6 +247,146 @@ $ curl https://rest.uniprot.org/uniprotkb/stream?compressed=true&format=fasta&qu
     > data/sequences/proteome/Aegilops_tauschii_proteins.fasta.gz
 $ gunzip data/sequences/proteome/Aegilops_tauschii_proteins.fasta.gz
 ```
+
+### Results
+
+In this results section we are, as explained, expecting to have for each predicted gene 3 blasting results. Since we're taking into consideration 4 genes from FGENESH and 2 from AUGUSTUS and blasting against 3 species' proteomes separately (T. aestivum, A. tauschii and T. durum), we would have 6 genes to analyse with 3 resulting blast output each.
+_BLAST results can be found by clicking on_: [this link](https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6sFI7_zIcU4x-ERs4ahNpiV46N476MYhdP2flOJrLseTCKA2K9sRKfiYyfOwCnwzBz5Mdh5RYgJHr/pubhtml)  
+_In the first reported blast we will analyse every single detail extensively to give an intuition of our analysis_
+
+#### **Augustus gene 1**: (_protein length: 707aa_)  
+
+
+In the first BLAST results for AUGUSTUS against our own species's proteome _Triticum aestivum_:  
+We find the top 5 hits quite significant with % id higher than 98.7% and then immediately drops to 52% after these 5 matches from the proteome database, providing an e-value estimated by blast+ to be 0 which is quite significant, thus we will be considering them as top results. Looking into them, we find the 1st hit to be 100% id, found on chromosome 4D, matching all of the protein's length (1-707 residues) against the full length of the subject from the database (also 1-707) with NO mismatches NO gaps, and this exact match gives a product: _Anaphase-promoting complex subunit 11 {ECO:0008006|Google:ProtNLM}, with gene name CFC21_063427 (as retrieved from uniprot's api)_  
+
+a snippet of the blast results and retrieved information for this hit:  
+
+- **Transcript ID:** AUGUSTUS_g1.t1
+- **Protein ID:** tr|A0A3B6JR29|A0A3B6JR29_WHEAT
+- **Alignment Score:** 100
+- **Query Length:** 707
+- **Mismatch Count:** 0
+- **Gap Count:** 0
+- **Query Start:** 1
+- **Query End:** 707
+- **Subject Start:** 1
+- **Subject End:** 707
+- **E-value:** 0
+- **Bit Score:** 1462
+- **Protein Name:** RecName: Full=Anaphase-promoting complex subunit 11 {ECO:0008006|Google:ProtNLM}
+- **Chromosome:** Chromosome 4D
+- **Organism:** Triticum aestivum (Wheat)
+- **Organism Protein ID:** A0A3B6JR29_WHEAT
+- **ORF Names:** CFC21_063427_063427 {ECO:0000313|EMBL:KAF7055962.1}
+- **Keywords:** Metal-binding, Reference proteome, Zinc, Zinc-finger  
+
+
+All the hits follows have the same product name, same gene name and aroudn same length (707 or 708 due to inserted gap). We can notice that not all of them are on the several hits can be due to:  
+
+- duplication  
+- isotopes (not an expertly reviewed database liek swissprot)  
+- hits on the same protein sequence but different alignments patterns
+
+Having the match 100% id to the first protein is a validation besides all the above mentioned signs from results (consistency of the matched proteins among the best hit), meaning that this gene moght be infat the CFC21_063427 gene, and the protein is the Anaphase-promoting complex subunit 11.   
+More interestingly it resides on the chromosome 4D, which is the chromosome we have mapped our region to, which provide a stringent evidence of our corelated work.
+
+
+
+
+The 2nd blast is done on _Aegilops tauschii_ proteome:  
+
+we find the 1st hit to be 100% id, matching all of the protein's length (1-707 residues) against the full length of the subject from the database (also 1-707) with only 5 mismatches, and this exact match gives a product: _Anaphase-promoting complex subunit 11 {ECO:0008006|Google:ProtNLM} (as retrieved from uniprot's api)_  
+
+<!-- ##################### -->
+
+The 3 hits that follows are truncated to be around 600 residues of length (630, 629, 621 respectively) and 4 mismatches beginning at around 78-87th position of the query until the end, each corresponding to these proteins: _Anaphase-promoting complex subunit 11 (twice) and VWFA domain-containing protein {ECO:0008006|Google:ProtNLM}_.  
+
+And the last hit is strictly a small segment from the first  388 residues of the query corresponding to _RING-type domain-containing protein {ECO:0008006|Google:ProtNLM}_,
+which can be a suggesting that the first part of the query contains this particular domain.  
+
+Even though the annotations are quite different, 2 interesting things are worth noting: All of them are metal-binding domains containing proteins relating to zinc and zinc-fingers, as can be seen from the list of keywords extracted from uniprot from the hit id, thus showing even though there is no consensus towards the annotation there is majority agreement on the functionality and domains of this sequence product:  
+
+
+> N.B. proteins all show to be on the same segment (chromosome), now it's worth noting that these are not expertly annotated as found in databases like swiss port, but overall these proteins are very highly similar between each other too. 
+
+<!-- ########### -->
+
+
+
+Next one with _Triticum durum_ proteome,
+which only has A and B chromosome (and in our case we have a D chromosome)
+but also showed 3 significant results belonging to the same protein (CFC21_063427 gene), the 1st 2 of the same length belonging to different chromosomes providing evidence to presence of duplicates maybe. 
+
+On a side note:  
+
+- the fact that the same protein is found in 4D of our species and 4D of _Aegilops tauschii_ enforces an evolutionary interspecies link (also in our region which turned out to be on 4D, this is a bonus finding)  
+- It is also perceived in the other species, _Triticum durum_, that only has the A and B which is a sign of conservation of this protein among the genus of _Triticum_, implying its importance maybe in this organism.
+
+---
+
+All these blast results show that indeed this gene1 is highly likely to be associated with the _Anaphase-promoting complex subunit 11_ protein, belonging to the 4D chromosome of our species, and there exist general agreement of the use of is full length (707aa) and is associated with a zinc-finger motif along with metal-binding activity (zinc most probably), with 100% match to the same protein product from our own species. We shall see other results to see the validity of our assumptions
+
+#### **Augustus gene 2**: (_protein length: 245aa_)  
+
+
+_Against Triticum aestivum proteome_
+
+Results firstly show 100% match of the first 245 residues of _Uncharacterized protein {ECO:0000313|EMBL:KAF7055961.1, ECO:0000313|EnsemblPlants:TraesCS4D02G339100.1}_, activity in DNA binding and transcription regulation, localized subcelluraly in the nucleus which might indicate its possibility to be a transcription factor. The aligned subject starts at 3rd residue, protein of length 247 indicating a possible mistake in the prediction of the gene length by AUGUSTUS.
+
+The other 2 hits also have high % match (>95), same query length and position mapped but differ only in the start position of the subject protein and the chromosome location (do not map in 4D) suggesting possible duplicates. 
+
+
+_Aegilops tauschii_
+
+Only one significant hit, same position as found previously 1-245, same exact annotation of the _Uncharacterized protein_ with transcription involving function found on chromosome 4D of this species (showing evolutionary conservation).
+
+
+_Triticum durum_
+
+Same results almost, same positions are aligned (1-245), same functional annotation, compartmentalization (in nucleus) for 2 hits on respectively 5b and 4a chromosomes (near 4d position wise on whole genome). Also this uncharacterized protein provides evidence on the structural annotation of these 245 residues of our genomic region done by AUGUSTUS
+
+
+_Thus the 2nd prediction of AUGUSTUS is also highly likely to be validated, with provided proof on conservative 245 residues involved in dna binding activity_
+
+#### **Fgenesh gene 1 & 2**  
+
+Show absolutely no significant results in each of the species, one of them no hits at all, those that have have a higher proportion mismatches than matches, high e value and % id <40. Thus no validation of these gene structures predicted by Fgenesh
+
+#### **Fgenesh gene 3** (length: 621aa)  
+
+This one provides interestingly similar results that also enforce our previously established hypothesis in the first Augustus gene:
+
+_Triticum aestivum_ 
+
+5 hits above 92%, all of them against the same protein (the _Anaphase-promoting complex subunit 11_)  
+Localized on chromosome 4D, matching the same length of our query (make sure) 1-621 in all 5 hits to different positions of the subject starting either at 67th or 76th residue with different alignment gaps and mismatch patterns
+
+> a more subtle hypothesis then having the same exact protein of different versions in the same place is having it align to the same protein entry, but we can not assume that especially that each of these 5 proteins has a different UniProt ID
+
+_Aegilops tauschii_
+
+These show similarity to AGUSTUS gene 1 results against this species' proteome. 4 hits of exactly 99.345% identity, the length is similar to previously reported (1-621 of query except the last one is 1-620) showing matches to respectively: _VWFA domain-containing protein_ & _Anaphase-promoting complex subunit 11_ (x2)  
+Also all metal bonding activity and present on 4D chromsome of this genome  (matches with Augustus prediction)
+
+_Triticum durum_
+
+These results show top 3 >92% id with Anaphase-promoting complex subunit 11, also 1-621 against 87-707 of 2 subjects and 87-670 of the 3rd one. Thus promoting the same resulting conclusion
+
+For this gene Fgenesh3, we would like to refer back to the analysis for Augustus gene 1 as something interesting is happening:
+
+As previously stated from gene prediction results, these 2 predicted genes might be attempts to map the same gene, which is validated here through their mapping of Anaphase.. with high %id emphasising this segment's functionality 
+
+we can notice that August's prediction match the 1-707 of subject while Fgenesh start at either 67 or 76th residue of the subject, both matching the length of the predicted genes length (707 vs 621 residues), we can comment that Fgensh has a truncated prediction at the 5' UTR which is supposed to be part of the product.
+(We can say that the 621 aa residues have been well predicted in the coding region, there might be a truncated chunk at the beginning of the protein as predicted by Fgenesh as the matches are late to start on subject proteins and when put in comparison with the length and alignment of Augustus's)
+
+### **Fgenesh gene 4** (length: 247aa)  
+
+Finally, we have here in _Triticum aestivum_ proteome, 3 hits with 100% id, 247 residues of the query matching the same length of the subject, all of them are _Uncharacterized protein_ but with same identifiers involved with ECO and such (also identifiers relatd to DNA-binding) with the same functional annotation, teh 100% match is with subject on 4D teh other 2 are respectively 4B and 5A which are closest to 4D in position, with the same exact alignment pattern, no mismatches, no gaps, and the same exact length of the protein.
+
+2 further hits in _Triticum durum_ and 1 in _Aegilops tauschii_ show the same results.
+
+Worth noting this matches with subject protein's length and further validates Augustus results, but even better with teh 2 first missing residues that we have mentioned before present here, thus highly suggesting the presence of a coding region here.
 
 ## Transcriptome 
 
@@ -299,13 +432,12 @@ _also downloaded pep, CDS, ncRNA and annotations (gff)_
 
 # Final annotation
 
-Gene 1 of Augustus (predicted protein) which has a length of 707aa has shown to perfectly align with a subject of the protein [..] which also has the same length, so this is our first final annotated gene, with positions as reported by AUGUSTUS:
+Gene 1 of Augustus (predicted protein) which has a length of 707aa has shown to perfectly align with a subject of the protein **Anaphase-promoting complex subunit 11** which also has the same length, so this is our first final annotated gene, with positions as reported by AUGUSTUS:
 
 | Feature        | Start   | End     |
 |----------------|---------|---------|
 | gene           | 6226    | 10861   |
 | transcript     | 6226    | 10861   |
-| tss            | 6226    | 6226    |
 | exon           | 6226    | 6762    |
 | start_codon    | 6532    | 6534    |
 | initial        | 6532    | 6762    |
@@ -317,7 +449,13 @@ Gene 1 of Augustus (predicted protein) which has a length of 707aa has shown to 
 | stop_codon     | 10604   | 10606   |
 | tts            | 10861   | 10861   |
 
-[structure and protein from uniprot]
+_What's Anaphase-promoting complex subunit 11?_
+
+**keywords:** _Metal-binding, Zinc, Zing-finger, Anaphase-promoting complex subunit 11, RING_  
+This is an unreviewed protein annotation (TrEMBL) with score 1/5, no structure has been experimentally determined which weaken its annotation status. 
+
+![Anaphase-promoting complex subunit 11 predicted structure from AlphaFold](image-8.png)
+
 
 
 # Supplementary
