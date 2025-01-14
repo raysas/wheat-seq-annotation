@@ -1,0 +1,10 @@
+##gff-version 3
+wheat_53611	RepeatMasker	repeat_region	130	1298	.	+	.	ID=RepeatMasker0;Name=RepeatMasker0-LTR/Copia;description=IKEROS_HV-int 5998 6933 score:5236
+wheat_53611	RepeatMasker	repeat_region	1299	1578	.	+	.	ID=RepeatMasker1;Name=RepeatMasker1-LTR/Copia;description=IKEROS_HV-LTR 1 278 score:1428
+wheat_53611	RepeatMasker	repeat_region	3736	3832	.	-	.	ID=RepeatMasker2;Name=RepeatMasker2-DNA/TcMar-Stowaway;description=HADES_TA 1 97 score:556
+wheat_53611	RepeatMasker	repeat_region	4919	4942	.	+	.	ID=RepeatMasker3;Name=RepeatMasker3-Low_complexity;description=AT_rich 1 24 score:24
+wheat_53611	RepeatMasker	repeat_region	5027	5930	.	-	.	ID=RepeatMasker4;Name=RepeatMasker4-DNA/PIF-Harbinger;description=HARB-N1_OS 848 2223 score:1160
+wheat_53611	RepeatMasker	repeat_region	6488	6520	.	+	.	ID=RepeatMasker5;Name=RepeatMasker5-Simple_repeat;description=(TCGGG)n 1 33 score:189
+wheat_53611	RepeatMasker	repeat_region	6618	6641	.	+	.	ID=RepeatMasker6;Name=RepeatMasker6-Low_complexity;description=GC_rich 1 24 score:24
+wheat_53611	RepeatMasker	repeat_region	7432	7532	.	+	.	ID=RepeatMasker7;Name=RepeatMasker7-DNA/TcMar-Stowaway;description=ICARUS_TM 7 107 score:652
+wheat_53611	RepeatMasker	repeat_region	12743	12878	.	+	.	ID=RepeatMasker8;Name=RepeatMasker8-Simple_repeat;description=(CTG)n 3 132 score:258
