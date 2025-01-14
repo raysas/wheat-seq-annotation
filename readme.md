@@ -472,11 +472,11 @@ we can notice that August's prediction match the 1-707 of subject while Fgenesh 
 
 ### **Fgenesh gene 4** (length: 247aa)  
 
-Finally, we have here in _Triticum aestivum_ proteome, 3 hits with 100% id, 247 residues of the query matching the same length of the subject, all of them are _Uncharacterized protein_ but with same identifiers involved with ECO and such (also identifiers relatd to DNA-binding) with the same functional annotation, teh 100% match is with subject on 4D teh other 2 are respectively 4B and 5A which are closest to 4D in position, with the same exact alignment pattern, no mismatches, no gaps, and the same exact length of the protein.
+Finally, we have here in _Triticum aestivum_ proteome, 3 hits with 100% id, 247 residues of the query matching the same length of the subject, all of them are _Uncharacterized protein_ but with same identifiers involved with ECO and such (also identifiers relatd to DNA-binding) with the same functional annotation, the 100% match is with subject on 4D the other 2 are respectively 4B and 5A which are closest to 4D in position, with the same exact alignment pattern, no mismatches, no gaps, and the same exact length of the protein.
 
 2 further hits in _Triticum durum_ and 1 in _Aegilops tauschii_ show the same results.
 
-Worth noting this matches with subject protein's length and further validates Augustus results, but even better with teh 2 first missing residues that we have mentioned before present here, thus highly suggesting the presence of a coding region here.
+Worth noting this matches with subject protein's length and further validates Augustus results, but even better with the 2 first missing residues that we have mentioned before present here, thus highly suggesting the presence of a coding region here.
 
 ## Transcriptome 
 
@@ -502,7 +502,7 @@ We also tried performing mapping through RNA Star, which is a splice aware and f
 
 After all, we have used over 80GB of memory for over 60 hours of computing on Galaxy server, we were in fact no longer able to proceed with RNAseq analysis.
 
-On the other hand we found this on NCBI, when we mapped our region to its coordinates on teh reference of chromosome 4D, and we found the following:
+On the other hand we found this on NCBI, when we mapped our region to its coordinates on the reference of chromosome 4D, and we found the following:
 
 ![region8 marked on chr 4D with RNAseq density, NCBI GDV](image-12.png)
 
@@ -677,20 +677,7 @@ RepeatMasker is a program that screens DNA sequences for interspersed repeats an
 
     The output file region8.fasta.txt.out contains the following information:
 
-    | SW score | perc div. | perc del. | perc ins. | query sequence | position in query (begin - end) | matching repeat                       | repeat class/family      | position in repeat (begin - end) | ID  |
-    |----------|-----------|-----------|-----------|----------------|----------------------------------|---------------------------------------|--------------------------|-----------------------------------|------|
-    | 406      | 33.0      | 7.2       | 1.4       | region8        | 129 - 533                       | RLC_Taes_Ida_EF540321-1               | Unspecified              | 3537 - 3964 (126)               | 1    |
-    | 16       | 0.0       | 0.0       | 0.0       | region8        | 2655 - 2671                     | (T)n                                  | Simple_repeat            | 1 - 17 (0)                      | 2    |
-    | 229      | 0.0       | 0.0       | 0.0       | region8        | 3291 - 3316                     | DTT_Taes_SBB_42j2-2                   | Unspecified              | 9 - 34 (51)                     | 3    |
-    | 811      | 3.1       | 0.0       | 0.0       | region8        | 3736 - 3832                     | DTT_Taes_Hades_42j2-4                 | Unspecified              | 1 - 97 (0)                      | 4    |
-    | 1032     | 30.8      | 3.9       | 4.5       | region8        | 5201 - 5809                     | DTH_Taes_Rong_AY951945-1              | Unspecified (C)          | 702 - 1716 (1111)               | 5    |
-    | 1060     | 33.8      | 1.7       | 1.5       | region8        | 5333 - 5915                     | DTH_Tmon_unnamed_AY914080-1           | Unspecified (C)          | 7 - 1243 (660)                  | 6    |
-    | 14       | 12.8      | 5.9       | 0.0       | region8        | 6393 - 6426                     | (CTCC)n                               | Simple_repeat            | 1 - 36 (0)                      | 7    |
-    | 18       | 13.3      | 0.0       | 0.0       | region8        | 6488 - 6520                     | (GGGTC)n                              | Simple_repeat            | 1 - 33 (0)                      | 8    |
-    | 15       | 0.0       | 4.5       | 0.0       | region8        | 6618 - 6639                     | (CGC)n                                | Simple_repeat            | 1 - 23 (0)                      | 9    |
-    | 827      | 3.1       | 0.0       | 0.0       | region8        | 7432 - 7529                     | DTT_Taes_Icarus_BJ274200-1            | Unspecified              | 5 - 102 (1)                     | 10   |
-    | 13       | 10.8      | 0.0       | 9.1       | region8        | 12248 - 12283                   | (TGGTCA)n                             | Simple_repeat            | 1 - 33 (0)                      | 11   |
-    | 12       | 8.0       | 7.4       | 0.0       | region8        | 12329 - 12355                   | (GCAT)n                               | Simple_repeat            | 1 - 29 (0)                      | 12   |
+    ![output](image-19.png)
 
     - **SW score**: Smith-Waterman score.
     - **perc div.**: Percentage of substitutions in the alignment.
@@ -713,24 +700,7 @@ RepeatMasker is a program that screens DNA sequences for interspersed repeats an
 
     The output file region8.fasta.txt.out:
 
-    | SW score | perc div. | perc del. | perc ins. | query sequence | position in query (begin - end) | matching repeat                       | repeat class/family      | position in repeat (begin - end) | ID  |
-    |----------|-----------|-----------|-----------|----------------|----------------------------------|---------------------------------------|--------------------------|-----------------------------------|------|
-    | 912      | 26.2      | 13.8      | 1.3       | region8        | 63 - 533                        | RLC_Hvul_Ikya_EF067844-1              | Unspecified              | 5056 - 5584 (1177)               | 1 *  |
-    | 7408     | 13.2      | 1.1       | 6.7       | region8        | 129 - 1537                      | RLC_Hvul_Ikeros_AY013246-1            | Unspecified              | 5055 - 6390 (139)                | 2    |
-    | 676      | 24.4      | 4.5       | 2.5       | region8        | 1299 - 1567                     | RLC_Hvul_Ikya_EF067844-1              | Unspecified              | 1 - 274 (6487)                   | 3 *  |
-    | 16       | 0.0       | 0.0       | 0.0       | region8        | 2655 - 2671                     | (T)n                                  | Simple_repeat            | 1 - 17 (0)                       | 4    |
-    | 267      | 2.9       | 0.0       | 0.0       | region8        | 3291 - 3324                     | DTT_Hvul_SBB_consensus-1              | Unspecified              | 9 - 42 (47)                      | 5    |
-    | 811      | 3.1       | 0.0       | 0.0       | region8        | 3736 - 3832                     | DTT_Taes_Hades_42j2-4                 | Unspecified              | 1 - 97 (0)                       | 6    |
-    | 393      | 22.1      | 7.8       | 5.3       | region8        | 3738 - 3904                     | DTC_Atau_Jorge_A_consensus-1          | Unspecified (C)          | 11255 - 11209 (11039)            | 7 *  |
-    | 1295     | 34.7      | 2.2       | 3.1       | region8        | 5033 - 5882                     | DTH_Bdis_BdisC_consensus-1            | Unspecified (C)          | 317 - 1655 (813)                 | 8    |
-    | 14       | 12.8      | 5.9       | 0.0       | region8        | 6393 - 6426                     | (CTCC)n                               | Simple_repeat            | 1 - 36 (0)                       | 9    |
-    | 18       | 13.3      | 0.0       | 0.0       | region8        | 6488 - 6520                     | (GGGTC)n                              | Simple_repeat            | 1 - 33 (0)                       | 10   |
-    | 15       | 0.0       | 4.5       | 0.0       | region8        | 6618 - 6639                     | (CGC)n                                | Simple_repeat            | 1 - 23 (0)                       | 11   |
-    | 261      | 26.9      | 11.1      | 0.7       | region8        | 7423 - 7557                     | DHH_Bdis_AA_Bd1-3                     | Unspecified (C)          | 563 - 12064 (11916)              | 12 * |
-    | 827      | 3.1       | 0.0       | 0.0       | region8        | 7432 - 7529                     | DTT_Taes_Icarus_BJ274200-1            | Unspecified              | 5 - 102 (1)                      | 13   |
-    | 243      | 11.8      | 11.7      | 1.5       | region8        | 8092 - 8151                     | RIX_Hvul_Morpheus_AY643843-1          | Unspecified              | 7450 - 7515 (451)                | 14   |
-    | 13       | 10.8      | 0.0       | 9.1       | region8        | 12248 - 12283                   | (TGGTCA)n                             | Simple_repeat            | 1 - 33 (0)                       | 15   |
-    | 12       | 8.0       | 7.4       | 0.0       | region8        | 12329 - 12355                   | (GCAT)n                               | Simple_repeat            | 1 - 29 (0)                       | 16   |
+![output](image-18.png)
 
 
 ## Censor
@@ -799,17 +769,19 @@ DNA Subway is a bioinformatics platform that provides a suite of tools for analy
 
 The output table:
 
-| **Seqid**       | **Source**     | **Type**        | **Length** | **Start** | **End** | **Score** | **Strand** | **Phase** | **Attributes**                                                                 |
-|-----------------|----------------|-----------------|------------|-----------|---------|-----------|------------|-----------|--------------------------------------------------------------------------------|
-| wheat_53611     | RepeatMasker   | repeat_region   | 1169       | 130       | 1298    | .         | +          | .         | ID=RepeatMasker0;Name=RepeatMasker0-LTR/Copia;description=IKEROS_HV-int 5998 6933 score:5236 |
-| wheat_53611     | RepeatMasker   | repeat_region   | 280        | 1299      | 1578    | .         | +          | .         | ID=RepeatMasker1;Name=RepeatMasker1-LTR/Copia;description=IKEROS_HV-LTR 1 278 score:1428 |
-| wheat_53611     | RepeatMasker   | repeat_region   | 97         | 3736      | 3832    | .         | -          | .         | ID=RepeatMasker2;Name=RepeatMasker2-DNA/TcMar-Stowaway;description=HADES_TA 1 97 score:556 |
-| wheat_53611     | RepeatMasker   | repeat_region   | 24         | 4919      | 4942    | .         | +          | .         | ID=RepeatMasker3;Name=RepeatMasker3-Low_complexity;description=AT_rich 1 24 score:24 |
-| wheat_53611     | RepeatMasker   | repeat_region   | 904        | 5027      | 5930    | .         | -          | .         | ID=RepeatMasker4;Name=RepeatMasker4-DNA/PIF-Harbinger;description=HARB-N1_OS 848 2223 score:1160 |
-| wheat_53611     | RepeatMasker   | repeat_region   | 33         | 6488      | 6520    | .         | +          | .         | ID=RepeatMasker5;Name=RepeatMasker5-Simple_repeat;description=(TCGGG)n 1 33 score:189 |
-| wheat_53611     | RepeatMasker   | repeat_region   | 24         | 6618      | 6641    | .         | +          | .         | ID=RepeatMasker6;Name=RepeatMasker6-Low_complexity;description=GC_rich 1 24 score:24 |
-| wheat_53611     | RepeatMasker   | repeat_region   | 101        | 7432      | 7532    | .         | +          | .         | ID=RepeatMasker7;Name=RepeatMasker7-DNA/TcMar-Stowaway;description=ICARUS_TM 7 107 score:652 |
-| wheat_53611     | RepeatMasker   | repeat_region   | 136        | 12743     | 12878   | .         | +          | .         | ID=RepeatMasker8;Name=RepeatMasker8-Simple_repeat;description=(CTG)n 3 132 score:258 |
+| **Seqid**       | **Source**     | **Type**        | **Length** | **Start** | **End** | **Score** | **Strand** | **Phase**                                                        |
+|-----------------|----------------|-----------------|------------|-----------|---------|-----------|------------|-----------|
+| wheat_53611     | RepeatMasker   | repeat_region   | 1169       | 130       | 1298    | .         | +          | .         | 
+| wheat_53611     | RepeatMasker   | repeat_region   | 280        | 1299      | 1578    | .         | +          | .         | 
+| wheat_53611     | RepeatMasker   | repeat_region   | 97         | 3736      | 3832    | .         | -          | .         | 
+| wheat_53611     | RepeatMasker   | repeat_region   | 24         | 4919      | 4942    | .         | +          | .         |
+| wheat_53611     | RepeatMasker   | repeat_region   | 904        | 5027      | 5930    | .         | -          | .         | 
+| wheat_53611     | RepeatMasker   | repeat_region   | 33         | 6488      | 6520    | .         | +          | .         | 
+| wheat_53611     | RepeatMasker   | repeat_region   | 24         | 6618      | 6641    | .         | +          | .         | 
+| wheat_53611     | RepeatMasker   | repeat_region   | 101        | 7432      | 7532    | .         | +          | .         | 
+| wheat_53611     | RepeatMasker   | repeat_region   | 136        | 12743     | 12878   | .         | +          | .         |
+
+_check them in output/ directory in github for reference_
 
 ## Interpretation
 
@@ -876,7 +848,7 @@ It has a RING type and VWFA domains, 2 exons protein, and it has an 670 aa isofo
 
 ![Ring type domain which matches with the A. tauschii previously discussed hit](image-9.png)
 
-Gene 2 that we conclude is from FGENESH's gene4: **"Uncharacterized protein"** with a length of 247aa, has shown to align with a subject of the protein **"Uncharacterized protein"** which also has the same length, so this is our second final annotated gene, AUGUSTUS matched teh last 245 aa of this protein. Positions as per FGENESH:  
+Gene 2 that we conclude is from FGENESH's gene4: **"Uncharacterized protein"** with a length of 247aa, has shown to align with a subject of the protein **"Uncharacterized protein"** which also has the same length, so this is our second final annotated gene, AUGUSTUS matched the last 245 aa of this protein. Positions as per FGENESH:  
 
 | G Str | Feature | Start    | End      |
 |---------|-------|---------|----------|
