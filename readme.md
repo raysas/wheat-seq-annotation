@@ -482,7 +482,7 @@ Worth noting this matches with subject protein's length and further validates Au
 
 ## Transcriptome 
 
-_still testing, might remove later_
+_Testing if we can find any transcriptome data_
 
 The [_European Nucleotide Archive (ENA)_](https://www.ebi.ac.uk/ena/browser/home) comprises a large collection of sequencing data from raw sequences to assembly to functionally annotated ones. While looking for [transcriptome studies for _Triticum aestivum_](https://www.ebi.ac.uk/ena/browser/view/Taxon:4565) we find several projects (Total= 22, in this table[^1]) 
 
@@ -496,11 +496,21 @@ Working on galaxy, first retrieve the SRA accession number from the project, too
 
 We will try now mapping: using Tophat2, we will map the reads to the reference genome of _Triticum aestivum_ (available on ENSEMBL) to see how many reads are mapped and how many are not. We have taken the reference genome using 
 
-### Trial 4: visualization
+_trying to perform RNA-seq aln and viz using IGB, no reads show_  
 
-_trying to perform RNA-seq aln and viz using IGB_  
+We also tried performing mapping through RNA Star, which is a splice aware and fast performing aligner, but the results were not satisfactory, also no reads were shown in the region of interest.
 
-![region8 marked on chr 4D with XM_044522475.1 transcript showing, NCBI GDV](image-12.png)
+![Tophat2 resulting bam file viz: no reads are shown in our region](image-17.png)
+
+After all, we have used over 80GB of memory for over 60 hours of computing on Galaxy server, we were in fact no longer able to proceed with RNAseq analysis.
+
+On the other hand we found this on NCBI, when we mapped our region to its coordinates on teh reference of chromosome 4D, and we found the following:
+
+![region8 marked on chr 4D with RNAseq density, NCBI GDV](image-12.png)
+
+![region8 marked on chr 4D with XM_044522475.1 transcript showing, NCBI GDV](image-16.png)
+
+One transcript was shown with some exon RNAseq exon density in the region, providing some hope that this region can actually contain a gene, even though the transcript does not map exact locations that we have. But overall, this is a good sign that the region is transcribed and can contain a gene (or more).
 
 <!-- ![](image-13.png) -->
 
@@ -509,12 +519,19 @@ _trying to perform RNA-seq aln and viz using IGB_
 |![](image-14.png) |![](image-13.png) | -->
 
 
-### cDNA
+_Another trial_:
 
 cDNA (complementary DNA) is a single-stranded DNA synthesized from a messenger RNA (mRNA) template in a reaction catalyzed by the enzyme reverse transcriptase. It is thus synthesized from the mRNA template, it can be used to study the gene expression in a cell, as it is a copy of the mRNA, and can be used to study the gene expression in a cell. It's a representation of a gene's transcript.  
-On Ensembl Plants, we can find the cDNA of _Triticum aestivum_ [_here on this ftp site (click link)_](https://plants.ensembl.org/Triticum_aestivum/Info/Index). There is one fasta file containing all of the genome's cDNA sequences, with a particular header format. To make the process more easily computable, we wrote  a bash script to filter the cDNA sequences of the chromosome 4D, and save them in a separate file.  
+On Ensembl Plants, we can find the cDNA of _Triticum aestivum_ [_here on this ftp site (click link)_](https://plants.ensembl.org/Triticum_aestivum/Info/Index). There is one fasta file containing all of the genome's cDNA sequences, with a particular header format. To make the process more easily computable, we wrote  a bash script to filter the cDNA sequences of the chromosome 4D (can be found in `./src/filter_cDNA.sh`) , and save them in a separate file. After that, we retrieved only 2 cDNA sequences:
 
-_also downloaded pep, CDS, ncRNA and annotations (gff)_
+```text
+>TraesCS4D02G339400.1 cdna chromosome:IWGSC:4D:497165754:497169019:-1 
+AGCCCCACCCATTTCCTTCCCTTCGGTCGAGGAAGGCAGCAGCAATAAATCTAGGTCCGG
+>TraesCS4D02G339300.1 cdna chromosome:IWGSC:4D:497150642:497160941:-1 
+CTTCAAGAGATGGAGATCCCTGACCAGCAGCCTGCGGTCGCAGTCGCAGAGATGGAAGCC
+```
+
+
 
 
 
