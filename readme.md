@@ -110,7 +110,7 @@ $ samtools sort data/sequences/alignment/region8.sam \
 $ bedtools bamtobed -i data/sequences/alignment/region8_aln.bam \  
     > data/sequences/alignment/region8_aln.bed
 ```
-_We chose this mapper because it's perfect for medium length reads ranging between 100bp and megabases, in our case it's a 14kb sequence_
+_We chose this mapper because it's perfect for medium length reads ranging between 100bp and megabases, in our case it's a 14kb sequence, keeping default parameters_
 
 Now we have in the output a `.bam` file and a `.bed` file. From the `.bam` file we can get the following information when running the following command:  
 ```bash
@@ -136,6 +136,8 @@ This means that the region8 is:
 - located on the chromosome `NC_057805.1`
 - position starting from `497158670` and ending at `497172670` 
 - on the negative strand.
+
+![Alignment of region8 of chromosome 4D using bam output file](image-1.png)
 
 ___Reflection___: our sequence is of length 14469, and the read is 9565+1+4435=14001, which means that the alignment is EXACTLY the same length as the sequence, and the 5 mismatches are not significant relative to the number of bases. We can thus infer that region8 is well mapped to the reference genome on the negative strand of chromosome `NC_057805.1` starting at position `497158670` and ending at `497172670`. And according to the table in [^8] retrieved from RefSeq, this chromosome is the 4D chromosome of _Triticum aestivum_.
 
@@ -216,9 +218,11 @@ $\iff$ These variations between the tools highlight the need for further investi
 
 > p.s. In order to visualize the features predicted by the abovementioned tools on artemis we first need to convert them to `.gff` format.
 
-![Predicted genes viz on Artemis](./assets/predicted_genes_artemis.png)
+<!-- ![Predicted genes viz on Artemis](./assets/predicted_genes_artemis.png) -->
 
-![](image-1.png)
+
+
+
 
 # Gene Validation
 
@@ -606,6 +610,18 @@ region8	FGENESH	exon	13169	13440	.	-	.	ID=gene2.exon2;Parent=gene2.t1
 region8	FGENESH	CDS	13169	13440	116.90	-	0	ID=gene2.cds2;Parent=gene2.t1
 ```
 
+
+Running viz on artemis: 
+
+```bash
+# we installed artemis as mentioned in file utils/tools_installation.sh on github
+tools/artemis/art data/region8
+# then add output/gene_final_annotation.gff
+# all these files can be found on the github repo
+```
+
+
+![final annotated and validated genes on artemis](assets/genes_artemis.png)
 
 # Supplementary
 
