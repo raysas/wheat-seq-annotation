@@ -6,7 +6,7 @@ author: "Group members: Aya BEN TAGHALINE, Joelle ASSY, Rayane ADAM"
 
 # Structure Genomics Project 2024/25
 
-![](./assets/wheat-genome-3green.png)
+![](./assets/wheat-genome-green.png)
 
 
 
