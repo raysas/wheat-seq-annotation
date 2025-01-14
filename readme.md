@@ -15,19 +15,16 @@ author: "Group members:"
   - [Sequence properties](#sequence-properties)
   - [Region localization](#region-localization)
 - [Gene Prediction](#gene-prediction)
-    - [Tools](#tools)
-    - [Visualization](#visualization)
 - [Gene Validation](#gene-validation)
-    - [BLAST](#blast)
-    - [Transcriptome](#transcriptome)
-- [Transposable Elements (TEs)](#transposable-elements-tes)
-- [Final annotation](#final-annotation)
-- [Supplementary](#supplementary)
+  - [BLAST](#blast)
+  - [Transciptome](#transciptome)
+- [Transposable Elements](#transposable-elements)
+- [Final Annotation](#final-annotation)
+- [Conclusion](#conclusion)
 
 
 # Introduction
 
-_Introduction on the species, structural genomics and goal of this project, then discuss potential issues that might arise due to complexity. Proceed by summarizing the desired workflow highlighting the criteria demanded by the instructor to be fulfilled_
 
 _Triticum aevistum_ (commonly known as wheat), is a complex eukaryotic organism belonging to kingdom Plantae, phylum Angiosperms, class Monocots, order Poales, family Poaceae, genus Triticum. This plant has been considered as one of the most important crops in the world, providing a staple food source for billions of people as it is mainly used to make bread.   
 
@@ -40,6 +37,48 @@ Even though it is somehow considered a model organism in plant biology, it has a
 
 The goal of this project is to annotate a specific region of the genome of _Triticum aestivum_ (wheat), mainly structurally annotate, using bioinformatics tools. The region of interest is a 14,001 bp sequence (`region8`), which we will analyze to predict genes, transposable elements, and other features. This task is considerably a hard one taking into consideration this complicated genome structure from polyploidy and the richness of repetitive elements, as well as its large size.  
 In this project, we will start of by a minor exploration fo our region then we'll perform gene prediction using a variety of tools then analyze and validate these results. We will also look for transposable elements in the region and perform a final annotation of the region to conclude with this report. We have used online servers, databases, api calls, unix tools, visualization software, python & bash scripting to perform the analysis. Supplementary results, data, code, figures and documentation can be found on the github repository of this project: [github.com/raysas/wheat-seq-annotation](https://github.com/raysas/wheat-seq-annotation).
+
+_Tools, databases and utils used in this project are listed in the following table by alphabetical order:_
+
+
+| Name                     | Type                | Use                                                                                     |
+|--------------------------|---------------------|-----------------------------------------------------------------------------------------|
+| AUGUSTUS                | Webserver          | Gene prediction tool                                                                   |
+| Artemis                 | Software           | Visualizing genome annotation                                                          |
+| Biopython               | Python library     | Retrieve data online via API calls, process sequences, and shift formats               |
+| Blast+                  | Unix tool          | Blast locally against built databases from Uniprot proteome data                       |
+| BWA-MEM2                | Galaxy server      | Map genomic regions against the reference genome                                       |
+| BEDTools                | Unix tool          | Manipulate BED files                                                                   |
+| Censor                  | Webserver          | Annotate TEs                                                                           |
+| DNASubway               | Webserver          | Annotation pipeline to verify results                                                  |
+| ENA database            | Database   | Retrieve TSA information and study data                                                |
+| RefSeq genome browser  | website | Visualize mapped regions on chromosomes                                                |
+| ENSEMBL Plants          | Database  | Reference sequence and cDNA (transcripts) of the wheat genome                          |
+| FastqGroomer            | Galaxy             | Standardize FASTQ format for mapping                                                  |
+| FastQC                  | Galaxy             | Check transcriptome quality                                                            |
+| FGENESH                 | Webserver          | Gene prediction tool                                                                   |
+| Galaxy EU               | Webserver          | Perform large-scale genomic analysis                                                   |
+| GENEID                  | Webserver          | Gene prediction tool                                                                   |
+| IGB                     | Software           | Genome visualization                                                                   |
+| RefSeq                  | Database  | Reference sequence of wheat genome chromosomes                                         |
+| RepeatMasker            | Unix tool          | Annotate TEs against the built Trep database                                           |
+| RNAStar                 | Galaxy             | Splice-aware RNA-seq mapper                                                            |
+| SAMtools                | Unix tool          | Manipulate SAM and BAM files                                                           |
+| Trep                    | Database        | TE database to run RepeatMasker locally                                                              |
+| Uniprot                 | Database           | Retrieve species proteome   |  
+| FastQC      | Galaxy      | Check transcriptome quality     |
+| FastqGroomer| Galaxy      | Standardize FASTQ format        |
+| IGB         | Software    | Genome visualization            |
+| RNAStar     | Galaxy      | Splice-aware RNA-seq mapper     |
+
+Project met:  
+
+- [x] annotate genes with complete coordinates, validation by the presence of transcribedsequences and/or homologous genes
+- [x] annotate proteins, potential protein functions, motifs and domains
+- [x] annotate transposable elements coordinate and family  
+
+and additionally:  
+- [x] localized the region on the reference genome, chromosome number and strand
 
 # Exploration
 
@@ -62,7 +101,7 @@ region8 is 14,001 bases long.
 
 ## Region localization
 
-Want to localize this region by mapping agaisnt the reference sequence of _Triticum aestivum_ (available on RefSeq at [GCF_018294505.1](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_018294505.1/)), which consists of $7n$ chromosomes[^8]. After retrieving the reference sequence, we perfomed mapping through Burrows-Wheeler Aligner MEM (bwa-mem) algorithm, and due to large genome size, we did this step on Galaxy because of the large computation time and memory required. 
+Want to localize this region by mapping agaisnt the reference sequence of _Triticum aestivum_ (available on RefSeq at [GCF_018294505.1](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_018294505.1/)), which consists of $7n$ chromosomes. After retrieving the reference sequence, we perfomed mapping through Burrows-Wheeler Aligner MEM (bwa-mem) algorithm, and due to large genome size, we did this step on Galaxy because of the large computation time and memory required. 
 ```bash
 $ bwa-mem2 mem -t 4 data/sequences/reference/GCF_018294505.1_genomic.fna \ 
     data/region8.fasta > data/sequences/alignment/region8.sam
@@ -128,7 +167,7 @@ The gene features, including exon positions and their strand orientation, sugges
 Gene 1 is located on the forward strand (+) and consists of two exons, with the first exon positioned from 6532 to 6762 and the terminal exon from 7754 to 7759. Gene 2 is also on the forward strand (+) and is a single-exon gene, extending from 10160 to 10606. 
 In contrast, Gene 3 is on the reverse strand (-) and has two exons, with the terminal exon located between 12512 and 12983, and the first exon from 13169 to 13434. The annotation reflects the strand orientation, with Gene 1 and Gene 2 being forward-strand genes, while Gene 3 is on the reverse strand, where exons are annotated in reverse order, starting from the terminal exon
 
-
+![geneid results](image-11.png)
 
 ### AUGUSTUS
 
@@ -174,9 +213,8 @@ $\iff$ These variations between the tools highlight the need for further investi
 
 
 
-## Visualization
 
-In order to visualize the features predicted by the abovementioned tools on artemis we first need to convert them to `.gff` format.
+> p.s. In order to visualize the features predicted by the abovementioned tools on artemis we first need to convert them to `.gff` format.
 
 ![Predicted genes viz on Artemis](./assets/predicted_genes_artemis.png)
 
@@ -207,12 +245,60 @@ $ gunzip data/sequences/proteome/Triticum_aestivum_proteins.fasta.gz
 $ cat data/sequences/proteome/Triticum_aestivum_proteins.fasta | grep '>' | wc -l 
 130283
 ```
-There is a total of 130,283 proteins in the file. We will now perform a BLAST search against this database to see if our predicted genes are similar to any of the known annotated proteins of _Triticum aestivum_. It'll be a blastp search, as we are looking for protein sequences that are similar to our predicted sequence (which is already translated by our tools output and saved in out repository in .faa files)
+There is a total of 130,283 proteins in the file. 
 
-We provided the commands to make blast databases and perform the search in the `blast.sh` script.
+We create the database locally, in `data/database`:  
 ```bash
-./src/blast.sh
+# --creating the local database
+# 1. Tritium_aestivum_proteome
+makeblastdb -in data/web_retrieved_sequences/proteins.fasta \
+            -dbtype prot \
+            -out data/database/Triticum_aestivum_proteome/Triticum_aestivum_proteome
 ```
+
+We will now perform a BLAST search against this database to see if our predicted genes are similar to any of the known annotated proteins of _Triticum aestivum_. It'll be a blastp search, as we are looking for protein sequences that are similar to our predicted sequence (which is already translated by our tools output and saved in out repository in .faa files)
+
+```bash
+# a. on AUGUSTUS_predicted.faa output
+blastp -query output/AUGUSTUS/AUGUSTUS_predicted.faa \
+       -db data/database/Triticum_aestivum_proteome/Triticum_aestivum_proteome \
+       -out output/blast/tabulated/AUGUSTUS_Triticum_aestivum_proteome_results.txt \
+       -outfmt 6 
+       #tabulated output
+```
+
+Then, using biopython uniprot api again, we will annotate the results to have a better understanding of the hits, as the proteome contain solely IDs and sequences. And for that we created a python script to clean the blast results and add the uniprot annotation to it, running it this way:
+
+```bash
+python src/clean_blast_results.py output/blast/tabulated/AUGUSTUS_Triticum_aestivum_proteome_results.txt
+``` 
+
+
+We provided the commands to make blast databases and perform all the search we've done in out analysis in the [`blast.sh`](https://github.com/raysas/wheat-seq-annotation/src/blast.sh) script.
+```bash
+./src/blast.sh # to run all the blast commands
+```
+
+<!-- This is the main commands to follow, doen 3 times (for this species, and the 2 related species) for each of the predicted genes from each of the tools:  
+
+```bash
+# --creating the local database
+# 1. Tritium_aestivum_proteome
+makeblastdb -in data/web_retrieved_sequences/proteins.fasta \
+            -dbtype prot \
+            -out data/database/Triticum_aestivum_proteome/Triticum_aestivum_proteome
+
+# -- blasting predicted genes against the local database
+# a. on AUGUSTUS_predicted.faa output
+#      i. tabulated output
+blastp -query output/AUGUSTUS/AUGUSTUS_predicted.faa \
+       -db data/database/Triticum_aestivum_proteome/Triticum_aestivum_proteome \
+       -out output/blast/tabulated/AUGUSTUS_Triticum_aestivum_proteome_results.txt \
+       -outfmt 6 
+
+#    ii. clean tabular output and add uniprot annotation
+python src/clean_blast_results.py output/blast/tabulated/AUGUSTUS_Triticum_aestivum_proteome_results.txt
+``` -->
 
 
 
@@ -432,7 +518,7 @@ _also downloaded pep, CDS, ncRNA and annotations (gff)_
 
 # Final annotation
 
-Gene 1 of Augustus (predicted protein) which has a length of 707aa has shown to perfectly align with a subject of the protein **Anaphase-promoting complex subunit 11** which also has the same length, so this is our first final annotated gene, with positions as reported by AUGUSTUS:
+Gene 1 of Augustus (predicted protein) which has a length of 707aa has shown to perfectly align with a subject of the protein **"Anaphase-promoting complex subunit 11"** which also has the same length, so this is our first final annotated gene, with positions as reported by AUGUSTUS:
 
 | Feature        | Start   | End     |
 |----------------|---------|---------|
@@ -456,6 +542,69 @@ This is an unreviewed protein annotation (TrEMBL) with score 1/5, no structure h
 
 ![Anaphase-promoting complex subunit 11 predicted structure from AlphaFold](image-8.png)
 
+It has a RING type and VWFA domains, 2 exons protein, and it has an 670 aa isoform (which explains hits of this length and possibly FGENESH's shorter prediction)
+
+![Ring type domain which matches with the A. tauschii previously discussed hit](image-9.png)
+
+Gene 2 that we conclude is from FGENESH's gene4: **"Uncharacterized protein"** with a length of 247aa, has shown to align with a subject of the protein **"Uncharacterized protein"** which also has the same length, so this is our second final annotated gene, AUGUSTUS matched teh last 245 aa of this protein. Positions as per FGENESH:  
+
+| G Str | Feature | Start    | End      |
+|---------|-------|---------|----------|
+| -     | PolA    | 11635    |          |
+| -     | 1 CDSl  | 12512    | 12983    |
+| -     | 2 CDSf  | 13169    | 13440    |
+| -     | TSS     | 13593    |          |
+
+What's this ambiguous "_Uncharacterized protein_"?  
+
+Getting back to this entry from it uniprot id, we notice it's involved in transcription regulation, DNA binding, and it's localized in the nucleus, it's poorly annotated as it is not reviewed (TrEMBL) and has a score of 1/5, no structure has been experimentally determined too.
+
+
+
+![Uncharacterized protein predicted structure from AlphaFold](image-10.png)
+
+
+The final genes in `.fasta`:  
+
+```text
+>gene1   2 exons  6226  -   10881   707 aa, chain +
+MADAWGRAKRALATKLCIRLPDRQRALEDAPPPPPPGREAHHPTTAVEAGPATGEEKARS
+PSVSSRRLSSSGSRGSKRVCAICLGSMRTGHGQALFTAECSHKFHFHCITSNVRHGNHIC
+PICRADWKELPFQGPQLADATHGRARVSPVNWPQDDGHMAVIRRLSNSYSGNLLEQFPVF
+RTPEADIFNDDEQIDIQSETVEDSNAVTGSVEIKTYAEVQAIQQSVTQKVFSILIHLKAP
+KSLESVSSRAPLDLVTVLDVSGSMKGAKLALLKKAMGFVIQTLGPNDRLSVIAFSSTARR
+LFPLRQMNVNGRMQAMHAVNSLVDGGGTNISDGLKKGAKVIEHRRLKNPVCSIILLSDGQ
+DTYSVPTFDDGVQTNHSMLVPPSILPGTGNHVQIHTFGFGADHDSAAMHAIAETSSGTFS
+FIDAEGSIQNGFAQCIGGLLSVVVKEMRLGVECVDEGVVLTSIKSGGYASEVAVDGRNGS
+VDIGDLYADEERGFLITLHVPAAQGQQTVLIKPSCTYQDAVTTESIQVHGSEVSVERPAY
+SVDCKMSPEVEREWHRVQAMEDMSAARAAADGGDFSQAVSILEGRTRILESQAAQSSDSQ
+CLALITELREMQERVESRRRYDESGRAFMLAGLSSHSWQRATARGDSTELNTQIHTYQTP
+SMVDMLHRSQTLVPAVVEMLNRSPTVAPSRGSGRSVRSTKSFSERLA
+>gene2   2 exons  12512  -  13440   247 aa, chain -
+MAMDAMSSAVLQGAWRKGPWTALEDRLLTEYVQQQGEGSWNSVAKLTGLRRSGKSCRLRW
+VNYLRPDLKRGKITADEETVILQLHAMLGNRWSAIARCLPGRTDNEIKNYWRTHFKKARP
+SRRARAQLLHQYQLQQQQQHRQYLHALHLLQQQQQEMQMQLQMEQQTHQPQVMMMQQQSP
+PEEDQAVITTVGNMNSMEAAECYCPCPAASAVLDLPLPADDEDALWDSLWRLVDGEDGSS
+GGDSGEY
+```
+
+in `.gff3`:
+```text
+##gff-version 3 format
+region8	AUGUSTUS	gene	6226	10861	0.03	+	.	ID=gene1
+region8	AUGUSTUS	mRNA	6226	10861	0.03	+	.	ID=gene1.t1;Parent=gene1
+region8	AUGUSTUS	exon	6226	6762	.	+	.	ID=gene1.exon1;Parent=gene1.t1
+region8	AUGUSTUS	CDS	6532	6762	0.94	+	0	ID=gene1.cds1;Parent=gene1.t1
+region8	AUGUSTUS	intron	6763	8713	.	+	.	ID=gene1.intron1;Parent=gene1.t1
+region8	AUGUSTUS	exon	8714	10861	.	+	.	ID=gene1.exon2;Parent=gene1.t1
+region8	AUGUSTUS	CDS	8714	10606	0.93	+	0	ID=gene1.cds2;Parent=gene1.t1
+region8	FGENESH	gene	12512	13440	.	-	.	ID=gene2
+region8	FGENESH	mRNA	12512	13440	.	-	.	ID=gene2.t1;Parent=gene2
+region8	FGENESH	exon	12512	12983	.	-	.	ID=gene2.exon1;Parent=gene2.t1
+region8	FGENESH	CDS	12512	12983	182.93	-	0	ID=gene2.cds1;Parent=gene2.t1
+region8	FGENESH	exon	13169	13440	.	-	.	ID=gene2.exon2;Parent=gene2.t1
+region8	FGENESH	CDS	13169	13440	116.90	-	0	ID=gene2.cds2;Parent=gene2.t1
+```
 
 
 # Supplementary

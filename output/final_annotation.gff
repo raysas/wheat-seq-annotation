@@ -1,0 +1,15 @@
+##gff-version 3 format
+chr4D	AUGUSTUS	gene	6226	10861	0.03	+	.	ID=gene1
+chr4D	AUGUSTUS	mRNA	6226	10861	0.03	+	.	ID=gene1.t1;Parent=gene1
+chr4D	AUGUSTUS	exon	6226	6762	.	+	.	ID=gene1.exon1;Parent=gene1.t1
+chr4D	AUGUSTUS	CDS	6532	6762	0.94	+	0	ID=gene1.cds1;Parent=gene1.t1
+chr4D	AUGUSTUS	intron	6763	8713	.	+	.	ID=gene1.intron1;Parent=gene1.t1
+chr4D	AUGUSTUS	exon	8714	10861	.	+	.	ID=gene1.exon2;Parent=gene1.t1
+chr4D	AUGUSTUS	CDS	8714	10606	0.93	+	0	ID=gene1.cds2;Parent=gene1.t1
+
+chr4D	FGENESH	gene	12512	13440	.	-	.	ID=gene2
+chr4D	FGENESH	mRNA	12512	13440	.	-	.	ID=gene2.t1;Parent=gene2
+chr4D	FGENESH	exon	12512	12983	.	-	.	ID=gene2.exon1;Parent=gene2.t1
+chr4D	FGENESH	CDS	12512	12983	182.93	-	0	ID=gene2.cds1;Parent=gene2.t1
+chr4D	FGENESH	exon	13169	13440	.	-	.	ID=gene2.exon2;Parent=gene2.t1
+chr4D	FGENESH	CDS	13169	13440	116.90	-	0	ID=gene2.cds2;Parent=gene2.t1
